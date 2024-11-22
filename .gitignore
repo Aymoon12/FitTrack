@@ -1,0 +1,4 @@
+# Project exclude paths
+/Backend/target/
+/Backend/src/main/resources/application.properties
+**/target/

@@ -1,0 +1,1953 @@
+Script started on Sun Aug 18 14:53:48 2024
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004hnnpm run   start[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:15398) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:15398) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+Module not found: Error: You attempted to import [36m/WorkoutSlice[39m which falls outside of the project [36msrc/[39m directory. Relative imports outside of [36msrc/[39m are not supported.
+You can either move it inside [36msrc/[39m, or add a symlink to it from project's [36mnode_modules/[39m.
+Did you mean './/WorkoutSlice'?
+Requests that should resolve in the current directory need to start with './'.
+Requests that start with a name are treated as module requests and resolve within module directories (node_modules, /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules).
+If changing the source code is not an option there is also a resolve options called 'preferRelative' which tries to resolve these kind of requests in the current directory too.
+[1m[33mWARNING[39m[22m in [eslint] 
+src/calorietracker/FoodSearch.js
+  [1mLine 2:22:[22m  'useParams' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/dashboard/FitnessDashboard.js
+  [1mLine 4:5:[22m  'Toolbar' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/login/SignInSide.js
+  [1mLine 16:8:[22m   'AuthCode' is defined but never used              [33m[4mno-unused-vars[24m[39m
+  [1mLine 42:12:[22m  'twoFCode' is assigned a value but never used     [33m[4mno-unused-vars[24m[39m
+  [1mLine 42:22:[22m  'setTwoFCode' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+
+src/login/SignUp.js
+  [1mLine 16:25:[22m  Unnecessary escape character: \+  [33m[4mno-useless-escape[24m[39m
+  [1mLine 16:62:[22m  Unnecessary escape character: \.  [33m[4mno-useless-escape[24m[39m
+  [1mLine 16:78:[22m  Unnecessary escape character: \.  [33m[4mno-useless-escape[24m[39m
+
+[1m[31mERROR[39m[22m in [1m./src/workouts/WorkoutRecommendation.js[39m[22m [1m[32m9:0-62[39m[22m
+Module not found: Error: You attempted to import [36m/WorkoutSlice[39m which falls outside of the project [36msrc/[39m directory. Relative imports outside of [36msrc/[39m are not supported.
+You can either move it inside [36msrc/[39m, or add a symlink to it from project's [36mnode_modules/[39m.
+Did you mean './/WorkoutSlice'?
+Requests that should resolve in the current directory need to start with './'.
+Requests that start with a name are treated as module requests and resolve within module directories (node_modules, /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules).
+If changing the source code is not an option there is also a resolve options called 'preferRelative' which tries to resolve these kind of requests in the current directory too.
+
+webpack compiled with [1m[31m1 error[39m[22m and [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/calorietracker/FoodSearch.js
+  [1mLine 2:22:[22m  'useParams' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/dashboard/FitnessDashboard.js
+  [1mLine 4:5:[22m  'Toolbar' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/login/SignInSide.js
+  [1mLine 16:8:[22m   'AuthCode' is defined but never used              [33m[4mno-unused-vars[24m[39m
+  [1mLine 42:12:[22m  'twoFCode' is assigned a value but never used     [33m[4mno-unused-vars[24m[39m
+  [1mLine 42:22:[22m  'setTwoFCode' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+
+src/login/SignUp.js
+  [1mLine 16:25:[22m  Unnecessary escape character: \+  [33m[4mno-useless-escape[24m[39m
+  [1mLine 16:62:[22m  Unnecessary escape character: \.  [33m[4mno-useless-escape[24m[39m
+  [1mLine 16:78:[22m  Unnecessary escape character: \.  [33m[4mno-useless-escape[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/calorietracker/FoodSearch.js
+  [1mLine 2:22:[22m  'useParams' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/dashboard/FitnessDashboard.js
+  [1mLine 4:5:[22m  'Toolbar' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/login/SignInSide.js
+  [1mLine 16:8:[22m   'AuthCode' is defined but never used              [33m[4mno-unused-vars[24m[39m
+  [1mLine 42:12:[22m  'twoFCode' is assigned a value but never used     [33m[4mno-unused-vars[24m[39m
+  [1mLine 42:22:[22m  'setTwoFCode' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+
+src/login/SignUp.js
+  [1mLine 16:25:[22m  Unnecessary escape character: \+  [33m[4mno-useless-escape[24m[39m
+  [1mLine 16:62:[22m  Unnecessary escape character: \.  [33m[4mno-useless-escape[24m[39m
+  [1mLine 16:78:[22m  Unnecessary escape character: \.  [33m[4mno-useless-escape[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004hnpm start
+nnpm start[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:15888) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:15888) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004hnnom  n npm start[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:16556) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:16556) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+x^[   ^X  ç ^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004hnnp m u r start[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:16759) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:16759) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 25:8:[22m  React Hook useEffect has a missing dependency: 'workouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://192.168.1.98:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+^X  ^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004hnnpm start[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:17583) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:17583) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+SyntaxError: /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/src/workouts/WorkoutLogger.js: Unexpected reserved word 'await'. (68:16)
+[0m [90m 66 |[39m             [36mif[39m(response[33m.[39mstatus [33m===[39m [35m202[39m){
+ [90m 67 |[39m                 toast[33m.[39msuccess([32m"Workout logged!"[39m)
+[31m[1m>[22m[39m[90m 68 |[39m                 [36mawait[39m
+ [90m    |[39m                 [31m[1m^[22m[39m
+ [90m 69 |[39m             }
+ [90m 70 |[39m         } [36mcatch[39m(e){
+ [90m 71 |[39m             console[33m.[39mlog(e)[0m
+[1m[31mERROR[39m[22m in [1m./src/workouts/WorkoutLogger.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/src/workouts/WorkoutLogger.js: Unexpected reserved word 'await'. (68:16)
+
+[0m [90m 66 |[39m             [36mif[39m(response[33m.[39mstatus [33m===[39m [35m202[39m){
+ [90m 67 |[39m                 toast[33m.[39msuccess([32m"Workout logged!"[39m)
+[31m[1m>[22m[39m[90m 68 |[39m                 [36mawait[39m
+ [90m    |[39m                 [31m[1m^[22m[39m
+ [90m 69 |[39m             }
+ [90m 70 |[39m         } [36mcatch[39m(e){
+ [90m 71 |[39m             console[33m.[39mlog(e)[0m
+    at constructor (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:349:19)
+    at FlowParserMixin.raise (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:3247:19)
+    at FlowParserMixin.checkReservedWord (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11722:12)
+    at FlowParserMixin.parseIdentifierName (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11702:12)
+    at FlowParserMixin.parseIdentifier (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11677:23)
+    at FlowParserMixin.parseExprAtom (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10920:27)
+    at FlowParserMixin.parseExprAtom (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6802:20)
+    at FlowParserMixin.parseExprSubscripts (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10562:23)
+    at FlowParserMixin.parseUpdate (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10547:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10527:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10381:61)
+    at FlowParserMixin.parseExprOps (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10386:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10363:23)
+    at FlowParserMixin.parseMaybeAssign (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5669:18)
+    at FlowParserMixin.parseExpressionBase (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10280:23)
+    at /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10276:39
+    at FlowParserMixin.allowInAnd (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11906:16)
+    at FlowParserMixin.parseExpression (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10276:17)
+    at FlowParserMixin.parseStatementContent (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12350:23)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12217:17)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5038:24)
+    at FlowParserMixin.parseStatementListItem (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12197:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12770:61)
+    at FlowParserMixin.parseBlockBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12763:10)
+    at FlowParserMixin.parseBlock (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12751:10)
+    at FlowParserMixin.parseStatementContent (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12307:21)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12217:17)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5038:24)
+    at FlowParserMixin.parseStatementOrSloppyAnnexBFunctionDeclaration (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12207:17)
+    at FlowParserMixin.parseIfStatement (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12584:28)
+    at FlowParserMixin.parseStatementContent (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12246:21)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12217:17)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5038:24)
+    at FlowParserMixin.parseStatementListItem (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12197:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12770:61)
+    at FlowParserMixin.parseBlockBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12763:10)
+    at FlowParserMixin.parseBlock (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12751:10)
+    at FlowParserMixin.parseTryStatement (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12659:23)
+    at FlowParserMixin.parseStatementContent (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12254:21)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12217:17)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5038:24)
+    at FlowParserMixin.parseStatementListItem (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12197:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12770:61)
+    at FlowParserMixin.parseBlockBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12763:10)
+    at FlowParserMixin.parseBlock (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12751:10)
+    at FlowParserMixin.parseFunctionBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11596:24)
+    at /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5012:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5188:16)
+    at FlowParserMixin.parseFunctionBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5012:12)
+
+[1m[31mERROR[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 68:16:[22m  Parsing error: Unexpected reserved word 'await'. (68:16)
+
+webpack compiled with [1m[31m2 errors[39m[22m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 23:11:[22m  'fetchWorkouts' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 23:11:[22m  'fetchWorkouts' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  http://localhost:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+[eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 38:10:[22m  'ThemeProvider' is not defined  [31m[4mreact/jsx-no-undef[24m[39m
+
+Search for the [4m[31mkeywords[39m[24m to learn more about each error.
+[1m[31mERROR[39m[22m in [eslint] 
+src/workouts/WorkoutRecommendation.js
+  [1mLine 38:10:[22m  'ThemeProvider' is not defined  [31m[4mreact/jsx-no-undef[24m[39m
+
+Search for the [4m[31mkeywords[39m[24m to learn more about each error.
+
+webpack compiled with [1m[31m1 error[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  http://localhost:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 25:11:[22m  The 'fetchWorkouts' function makes the dependencies of useEffect Hook (at line 50) change on every render. To fix this, wrap the definition of 'fetchWorkouts' in its own useCallback() Hook  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 25:11:[22m  The 'fetchWorkouts' function makes the dependencies of useEffect Hook (at line 50) change on every render. To fix this, wrap the definition of 'fetchWorkouts' in its own useCallback() Hook  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004hnnpm stat[?2004l
+tUnknown command: "stat"
+
+Did you mean one of these?
+  npm star # Mark your favorite packages
+  npm start # Start a package
+
+To see a list of supported npm commands, run:
+  npm help
+[1G[0K[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004htt  nnpm stat rt[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:17847) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:17847) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:11:[22m  'fetchWorkouts' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:11:[22m  'fetchWorkouts' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:11:[22m  'fetchWorkouts' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:11:[22m  'fetchWorkouts' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:11:[22m  'fetchWorkouts' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:11:[22m  'fetchWorkouts' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 63:13:[22m  'conole' is not defined  [31m[4mno-undef[24m[39m
+
+Search for the [4m[31mkeywords[39m[24m to learn more about each error.
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+[1m[31mERROR[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 63:13:[22m  'conole' is not defined  [31m[4mno-undef[24m[39m
+
+Search for the [4m[31mkeywords[39m[24m to learn more about each error.
+
+webpack compiled with [1m[31m1 error[39m[22m and [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 3:29:[22m   'useEffect' is defined but never used                                                                                     [33m[4mno-unused-vars[24m[39m
+  [1mLine 25:27:[22m  React Hook useCallback does nothing when called with only one argument. Did you forget to pass an array of dependencies?  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+ç ç ^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004hnnpm start[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:18283) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:18283) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 50:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 50:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 50:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 50:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 51:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 51:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 51:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 51:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 51:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 51:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 51:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 51:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 52:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 52:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 52:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 52:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 52:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 52:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 52:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 52:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 51:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 51:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 51:7:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array                          [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 51:8:[22m  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004h      nnpm start[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:18540) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:18540) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+ç\\  ^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004hnnpm start[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:18623) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:18623) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 44:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 44:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 44:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 44:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+ç ^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004hnnpm start[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:18793) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:18793) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 40:8:[22m  React Hook useCallback has a missing dependency: 'date'. Either include it or remove the dependency array         [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 40:8:[22m  React Hook useCallback has a missing dependency: 'date'. Either include it or remove the dependency array         [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 40:8:[22m  React Hook useCallback has a missing dependency: 'date'. Either include it or remove the dependency array         [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 40:8:[22m  React Hook useCallback has a missing dependency: 'date'. Either include it or remove the dependency array         [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 40:8:[22m  React Hook useCallback has a missing dependency: 'date'. Either include it or remove the dependency array         [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 40:8:[22m  React Hook useCallback has a missing dependency: 'date'. Either include it or remove the dependency array         [33m[4mreact-hooks/exhaustive-deps[24m[39m
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 45:8:[22m  React Hook useEffect has a missing dependency: 'fetchWorkouts'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 156:41:[22m  'navigate' is not defined  [31m[4mno-undef[24m[39m
+
+Search for the [4m[31mkeywords[39m[24m to learn more about each error.
+[1m[31mERROR[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 156:41:[22m  'navigate' is not defined  [31m[4mno-undef[24m[39m
+
+Search for the [4m[31mkeywords[39m[24m to learn more about each error.
+
+webpack compiled with [1m[31m1 error[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 49:11:[22m  'handleSubmit' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 49:11:[22m  'handleSubmit' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+SyntaxError: /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/src/workouts/WorkoutLogger.js: Unexpected token, expected "}" (160:24)
+[0m [90m 158 |[39m                     [33m<[39m[33mbutton[39m
+ [90m 159 |[39m                         onSubmit[33m=[39m{(e) [33m=>[39m e[33m.[39mpreventDefault()
+[31m[1m>[22m[39m[90m 160 |[39m                         {navigate([32m'/recommendations'[39m)}
+ [90m     |[39m                         [31m[1m^[22m[39m
+ [90m 161 |[39m                     }
+ [90m 162 |[39m                         className[33m=[39m[32m"mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"[39m
+ [90m 163 |[39m                     [33m>[39m[0m
+[1m[31mERROR[39m[22m in [1m./src/workouts/WorkoutLogger.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/src/workouts/WorkoutLogger.js: Unexpected token, expected "}" (160:24)
+
+[0m [90m 158 |[39m                     [33m<[39m[33mbutton[39m
+ [90m 159 |[39m                         onSubmit[33m=[39m{(e) [33m=>[39m e[33m.[39mpreventDefault()
+[31m[1m>[22m[39m[90m 160 |[39m                         {navigate([32m'/recommendations'[39m)}
+ [90m     |[39m                         [31m[1m^[22m[39m
+ [90m 161 |[39m                     }
+ [90m 162 |[39m                         className[33m=[39m[32m"mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"[39m
+ [90m 163 |[39m                     [33m>[39m[0m
+    at constructor (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:349:19)
+    at FlowParserMixin.raise (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:3247:19)
+    at FlowParserMixin.unexpected (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:3267:16)
+    at FlowParserMixin.expect (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:3577:12)
+    at FlowParserMixin.jsxParseExpressionContainer (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6675:10)
+    at FlowParserMixin.jsxParseAttributeValue (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6642:21)
+    at FlowParserMixin.jsxParseAttribute (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6691:38)
+    at FlowParserMixin.jsxParseOpeningElementAfterName (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6705:28)
+    at FlowParserMixin.jsxParseOpeningElementAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6700:17)
+    at FlowParserMixin.jsxParseElementAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6724:33)
+    at FlowParserMixin.jsxParseElementAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6736:32)
+    at FlowParserMixin.jsxParseElementAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6736:32)
+    at FlowParserMixin.jsxParseElementAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6736:32)
+    at FlowParserMixin.jsxParseElementAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6736:32)
+    at FlowParserMixin.jsxParseElement (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6787:17)
+    at FlowParserMixin.parseExprAtom (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6797:19)
+    at FlowParserMixin.parseExprSubscripts (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10562:23)
+    at FlowParserMixin.parseUpdate (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10547:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10527:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10381:61)
+    at FlowParserMixin.parseExprOps (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10386:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10363:23)
+    at FlowParserMixin.parseMaybeAssign (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10326:21)
+    at /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5618:39
+    at FlowParserMixin.tryParse (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:3585:20)
+    at FlowParserMixin.parseMaybeAssign (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5618:18)
+    at /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10296:39
+    at FlowParserMixin.allowInAnd (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11911:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10296:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11173:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5711:18)
+    at FlowParserMixin.parseExprAtom (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10829:23)
+    at FlowParserMixin.parseExprAtom (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6802:20)
+    at FlowParserMixin.parseExprSubscripts (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10562:23)
+    at FlowParserMixin.parseUpdate (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10547:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10527:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10381:61)
+    at FlowParserMixin.parseExprOps (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10386:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10363:23)
+    at FlowParserMixin.parseMaybeAssign (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5669:18)
+    at FlowParserMixin.parseExpressionBase (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10280:23)
+    at /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10276:39
+    at FlowParserMixin.allowInAnd (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11906:16)
+    at FlowParserMixin.parseExpression (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10276:17)
+    at FlowParserMixin.parseReturnStatement (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12596:28)
+    at FlowParserMixin.parseStatementContent (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12248:21)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12217:17)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5038:24)
+    at FlowParserMixin.parseStatementListItem (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12197:17)
+
+[1m[31mERROR[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 160:24:[22m  Parsing error: Unexpected token, expected "}" (160:24)
+
+webpack compiled with [1m[31m2 errors[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+SyntaxError: /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/src/workouts/WorkoutLogger.js: Expected corresponding JSX closing tag for <div>. (159:16)
+[0m [90m 157 |[39m
+ [90m 158 |[39m
+[31m[1m>[22m[39m[90m 159 |[39m                 [33m<[39m[33m/[39m[33mform[39m[33m>[39m
+ [90m     |[39m                 [31m[1m^[22m[39m
+ [90m 160 |[39m                 [33m<[39m[33mbutton[39m
+ [90m 161 |[39m                     onSubmit[33m=[39m{(e) [33m=>[39m {
+ [90m 162 |[39m                         e[33m.[39mpreventDefault()[0m
+[1m[31mERROR[39m[22m in [1m./src/workouts/WorkoutLogger.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/src/workouts/WorkoutLogger.js: Expected corresponding JSX closing tag for <div>. (159:16)
+
+[0m [90m 157 |[39m
+ [90m 158 |[39m
+[31m[1m>[22m[39m[90m 159 |[39m                 [33m<[39m[33m/[39m[33mform[39m[33m>[39m
+ [90m     |[39m                 [31m[1m^[22m[39m
+ [90m 160 |[39m                 [33m<[39m[33mbutton[39m
+ [90m 161 |[39m                     onSubmit[33m=[39m{(e) [33m=>[39m {
+ [90m 162 |[39m                         e[33m.[39mpreventDefault()[0m
+    at constructor (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:349:19)
+    at FlowParserMixin.raise (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:3247:19)
+    at FlowParserMixin.jsxParseElementAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6765:16)
+    at FlowParserMixin.jsxParseElementAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6736:32)
+    at FlowParserMixin.jsxParseElementAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6736:32)
+    at FlowParserMixin.jsxParseElementAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6736:32)
+    at FlowParserMixin.jsxParseElement (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6787:17)
+    at FlowParserMixin.parseExprAtom (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6797:19)
+    at FlowParserMixin.parseExprSubscripts (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10562:23)
+    at FlowParserMixin.parseUpdate (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10547:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10527:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10381:61)
+    at FlowParserMixin.parseExprOps (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10386:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10363:23)
+    at FlowParserMixin.parseMaybeAssign (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10326:21)
+    at /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5618:39
+    at FlowParserMixin.tryParse (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:3585:20)
+    at FlowParserMixin.parseMaybeAssign (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5618:18)
+    at /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10296:39
+    at FlowParserMixin.allowInAnd (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11911:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10296:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11173:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5711:18)
+    at FlowParserMixin.parseExprAtom (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10829:23)
+    at FlowParserMixin.parseExprAtom (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:6802:20)
+    at FlowParserMixin.parseExprSubscripts (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10562:23)
+    at FlowParserMixin.parseUpdate (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10547:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10527:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10381:61)
+    at FlowParserMixin.parseExprOps (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10386:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10363:23)
+    at FlowParserMixin.parseMaybeAssign (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5669:18)
+    at FlowParserMixin.parseExpressionBase (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10280:23)
+    at /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10276:39
+    at FlowParserMixin.allowInAnd (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11906:16)
+    at FlowParserMixin.parseExpression (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:10276:17)
+    at FlowParserMixin.parseReturnStatement (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12596:28)
+    at FlowParserMixin.parseStatementContent (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12248:21)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12217:17)
+    at FlowParserMixin.parseStatementLike (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5038:24)
+    at FlowParserMixin.parseStatementListItem (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12197:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12770:61)
+    at FlowParserMixin.parseBlockBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12763:10)
+    at FlowParserMixin.parseBlock (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:12751:10)
+    at FlowParserMixin.parseFunctionBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11596:24)
+    at /Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5012:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5188:16)
+    at FlowParserMixin.parseFunctionBody (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:5012:12)
+    at FlowParserMixin.parseArrowExpression (/Users/baldman/Documents/Java Projects/Fitness App/Backend/FitnessApp/frontend/node_modules/@babel/parser/lib/index.js:11571:10)
+
+[1m[31mERROR[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 159:16:[22m  Parsing error: Expected corresponding JSX closing tag for <div>. (159:16)
+
+webpack compiled with [1m[31m2 errors[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 164:18:[22m  'Button' is not defined  [31m[4mreact/jsx-no-undef[24m[39m
+
+Search for the [4m[31mkeywords[39m[24m to learn more about each error.
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 94:14:[22m  'handleRecommend' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+[1m[31mERROR[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 164:18:[22m  'Button' is not defined  [31m[4mreact/jsx-no-undef[24m[39m
+
+Search for the [4m[31mkeywords[39m[24m to learn more about each error.
+
+webpack compiled with [1m[31m1 error[39m[22m and [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+[eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 95:14:[22m  'handleRecommend' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [eslint] 
+src/workouts/WorkoutLogger.js
+  [1mLine 95:14:[22m  'handleRecommend' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.140.7.167:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+ç ^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004hnnpm run ta      start[?2004l
+
+> frontend@0.1.0 start
+> react-scripts start
+
+[1G[0K(node:20780) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:20780) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.221.81.112:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m3000[22m
+  [1mOn Your Network:[22m  http://10.221.81.112:[1m3000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+^X  ^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jbaldman@Aymans-MacBook-Air frontend % [K[?2004h
