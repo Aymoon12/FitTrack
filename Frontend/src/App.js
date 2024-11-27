@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import { store } from './reduxstore/store';
 import WorkoutRecommendation from './workouts/WorkoutRecommendation';
 import UserProfile from "./user/UserProfile";
+import Survey from "./nutrition/Survey"
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/workouts" element={<WorkoutLogger />} />
                     <Route path="/recommendations" element={<WorkoutRecommendation />} />
                     <Route path="/settings" element={<UserProfile/>} />
+                    <Route path="/survey" element={<Survey/>} />
                 </Routes>
             </Router>
         </Provider>
