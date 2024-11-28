@@ -16,52 +16,16 @@ FitTrack is a web application designed to help users track their fitness goals, 
 - **Frontend**: React, Tailwind CSS, MaterialUI
 - **Backend**: Spring Boot, SQL
 - **Authentication**: JWT, OAUTH2
+  
+## Access
 
-## Setup
-
-### Prerequisites
-
-- 
-- 
-
-### Installation
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/yourusername/fittrack.git
-   cd fittrack
-   ```
-
-2. **Install Dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Environment Variables**
-
-   Create a `.env` file in the root directory and add the following variables:
-
-   ```env
-   PORT=5000
-   MONGO_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret
-   ```
-
-4. **Start the Application**
-
-   ```bash
-   npm start
-   ```
-
-   The application will be available at `http://localhost:5000`.
-
+- Visit _ to access the web application.
+  
 ## Usage
 
 1. **Sign Up or Log In**
 
-   - Navigate to the login page and sign up or log in with your credentials.
+   - Sign up or log in with your credentials.
 
 2. **Set Your Goals**
 
@@ -77,7 +41,7 @@ FitTrack is a web application designed to help users track their fitness goals, 
 
 5. **View Your Progress**
 
-   - Check the "Progress" section to see charts and graphs that visualize your progress over time.
+   - Progress can be viewed on multiple screens pertaining to nutrition or fitness.
 
 
 ## Contribution
