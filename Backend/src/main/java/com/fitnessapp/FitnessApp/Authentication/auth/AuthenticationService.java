@@ -70,7 +70,7 @@ public class AuthenticationService {
 			user.setTwoFactorAuth(new TwoFactorAuth());
 			user.setStreak(1L);
 			user.setLastSignIn(LocalDate.now());
-
+			user.setCompletedSurvey(false);
 		if (request.getGithub_id() != null){
 			user.setGitHubID(request.getGithub_id());
 		}

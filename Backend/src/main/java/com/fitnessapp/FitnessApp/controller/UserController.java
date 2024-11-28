@@ -1,13 +1,11 @@
 package com.fitnessapp.FitnessApp.controller;
 
-import com.fitnessapp.FitnessApp.Authentication.config.JwtService;
 import com.fitnessapp.FitnessApp.dto.UserDTO;
 import com.fitnessapp.FitnessApp.model.Response;
 import com.fitnessapp.FitnessApp.model.UserGoals;
+import com.fitnessapp.FitnessApp.requests.SurveyResults;
 import com.fitnessapp.FitnessApp.requests.UpdateInfoRequest;
 import com.fitnessapp.FitnessApp.requests.UserGoalsRequest;
-import com.fitnessapp.FitnessApp.requests.VerificationTypeRequest;
-import com.fitnessapp.FitnessApp.repository.UserRepository;
 import com.fitnessapp.FitnessApp.service.UserGoalsService;
 import com.fitnessapp.FitnessApp.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,8 +20,6 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
 	private final UserService userService;
-	private final UserRepository userRepository;
-	private final JwtService jwtService;
 	private final UserGoalsService userGoalsService;
 
 	@GetMapping("/getUser")
@@ -72,6 +68,13 @@ public class UserController {
 	public ResponseEntity<Response> updateUserInfo(@RequestParam Long user_id,
 												   @RequestBody UpdateInfoRequest updateInfoRequest){
 		return ResponseEntity.ok(userService.updateUserInfo(user_id,updateInfoRequest));
+	}
+
+	@PostMapping("/getSurveyResults")
+	public ResponseEntity<Boolean> getSurveyResults(@RequestParam Long user_id,
+													@RequestBody SurveyResults surveyResults){
+		return ResponseEntity.ok(userService.processUserSurveyResults(user_id,surveyResults));
+
 	}
 
 

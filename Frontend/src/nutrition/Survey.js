@@ -14,7 +14,7 @@ const Survey = () => {
 
     const questions = [
         { id: "age", text: "What is your age?", type: "number", placeholder: "Enter your age" },
-        { id: "weight", text: "What is your weight (in kg)?", type: "number", placeholder: "Enter your weight" },
+        { id: "weight", text: "What is your weight (in lbs)?", type: "decimal", placeholder: "Enter your weight" },
         { id: "activity", text: "What is your activity level?", type: "select", options: ["Low", "Moderate", "High"] },
         {
             id: "goal",

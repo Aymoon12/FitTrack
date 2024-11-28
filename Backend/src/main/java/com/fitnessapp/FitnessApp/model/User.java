@@ -77,6 +77,17 @@ public class User implements UserDetails {
 
 	private Long streak;
 
+	private boolean completedSurvey;
+
+	private Long age;
+	private Double weight;
+
+	@Enumerated(EnumType.STRING)
+	private ActivityLevel activityLevel;
+
+	@Enumerated
+	private HealthGoal healthGoal;
+
 
 
 	@Override

@@ -3,9 +3,12 @@ package com.fitnessapp.FitnessApp.service;
 import com.fitnessapp.FitnessApp.Authentication.TwoFactor.VerificationType;
 import com.fitnessapp.FitnessApp.Authentication.config.JwtService;
 import com.fitnessapp.FitnessApp.dto.UserDTO;
+import com.fitnessapp.FitnessApp.model.ActivityLevel;
+import com.fitnessapp.FitnessApp.model.HealthGoal;
 import com.fitnessapp.FitnessApp.model.Response;
 import com.fitnessapp.FitnessApp.model.User;
 import com.fitnessapp.FitnessApp.repository.UserRepository;
+import com.fitnessapp.FitnessApp.requests.SurveyResults;
 import com.fitnessapp.FitnessApp.requests.UpdateInfoRequest;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
@@ -168,4 +171,24 @@ public class UserService {
 		userRepository.save(user);
 		return user.getStreak();
 	}
+
+
+    public Boolean processUserSurveyResults(Long userId, SurveyResults surveyResults) {
+
+		User user = userRepository.findUserById(userId)
+				.orElseThrow(() -> new RuntimeException("User not found"));
+
+		if(user.getAge() != null && user.getActivityLevel() != null && user.getWeight() != null && user.getHealthGoal() != null){
+			throw new RuntimeException("User has already finished survey!");
+		}
+		user.setAge(surveyResults.getAge());
+		user.setActivityLevel(ActivityLevel.fromString(surveyResults.getActivity()));
+		user.setWeight(surveyResults.getWeight());
+		user.setHealthGoal(HealthGoal.fromString(surveyResults.getGoal()));
+		userRepository.save(user);
+		return true;
+
+
+
+    }
 }
