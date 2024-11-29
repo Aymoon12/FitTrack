@@ -71,7 +71,7 @@ public class UserController {
 	}
 
 	@PostMapping("/getSurveyResults")
-	public ResponseEntity<Boolean> getSurveyResults(@RequestParam Long user_id,
+	public ResponseEntity<UserDTO> getSurveyResults(@RequestParam Long user_id,
 													@RequestBody SurveyResults surveyResults){
 		return ResponseEntity.ok(userService.processUserSurveyResults(user_id,surveyResults));
 

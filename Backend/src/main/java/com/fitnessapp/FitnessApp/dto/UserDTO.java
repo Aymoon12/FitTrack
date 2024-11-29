@@ -2,6 +2,8 @@ package com.fitnessapp.FitnessApp.dto;
 
 
 import com.fitnessapp.FitnessApp.Authentication.TwoFactor.TwoFactorAuth;
+import com.fitnessapp.FitnessApp.model.ActivityLevel;
+import com.fitnessapp.FitnessApp.model.HealthGoal;
 import com.fitnessapp.FitnessApp.model.Role;
 import com.fitnessapp.FitnessApp.model.User;
 import lombok.Builder;
@@ -22,6 +24,11 @@ public class UserDTO {
 	private LocalDate dob;
 	private TwoFactorAuth twoFactorAuth;
 	private Long streak;
+	private boolean completedSurvey;
+	private Long age;
+	private Double weight;
+	private ActivityLevel activityLevel;
+	private HealthGoal healthGoal;
 
 
 	public static UserDTO userToUserDTO(User user) {
@@ -36,6 +43,11 @@ public class UserDTO {
 				.dob(user.getDob())
 				.twoFactorAuth(user.getTwoFactorAuth())
 				.streak(user.getStreak())
+				.completedSurvey(user.isCompletedSurvey())
+				.age(user.getAge())
+				.weight(user.getWeight())
+				.activityLevel(user.getActivityLevel())
+				.healthGoal(user.getHealthGoal())
 				.build();
 
 

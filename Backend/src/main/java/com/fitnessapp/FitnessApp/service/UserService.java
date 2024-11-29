@@ -173,20 +173,21 @@ public class UserService {
 	}
 
 
-    public Boolean processUserSurveyResults(Long userId, SurveyResults surveyResults) {
+    public UserDTO processUserSurveyResults(Long userId, SurveyResults surveyResults) {
 
 		User user = userRepository.findUserById(userId)
 				.orElseThrow(() -> new RuntimeException("User not found"));
 
-		if(user.getAge() != null && user.getActivityLevel() != null && user.getWeight() != null && user.getHealthGoal() != null){
+		if(user.isCompletedSurvey()){
 			throw new RuntimeException("User has already finished survey!");
 		}
 		user.setAge(surveyResults.getAge());
 		user.setActivityLevel(ActivityLevel.fromString(surveyResults.getActivity()));
 		user.setWeight(surveyResults.getWeight());
 		user.setHealthGoal(HealthGoal.fromString(surveyResults.getGoal()));
+		user.setCompletedSurvey(true);
 		userRepository.save(user);
-		return true;
+		return UserDTO.userToUserDTO(user);
 
 
 

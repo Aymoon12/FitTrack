@@ -1,20 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../dashboard/Navbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { AppBar } from "@mui/material";
+import { getUser, getToken } from "../utils";
+import axios from "axios";
 
 const Survey = () => {
-    const theme = createTheme({
-        palette: {
-            primary: {
-                main: "#1976d2",
-            },
-        },
-    });
+    const user = getUser();
+    const token = getToken();
 
     const questions = [
         { id: "age", text: "What is your age?", type: "number", placeholder: "Enter your age" },
-        { id: "weight", text: "What is your weight (in lbs)?", type: "decimal", placeholder: "Enter your weight" },
+        { id: "weight", text: "What is your weight (in lbs)?", type: "number", placeholder: "Enter your weight" },
         { id: "activity", text: "What is your activity level?", type: "select", options: ["Low", "Moderate", "High"] },
         {
             id: "goal",
@@ -34,6 +31,25 @@ const Survey = () => {
     const [responses, setResponses] = useState({});
     const [isCompleted, setIsCompleted] = useState(false);
 
+    const sendResults = async () => {
+        try {
+            const response = await axios.post('http://localhost:8080/api/v1/user/getSurveyResults', responses, {
+                params: {
+                    user_id: user.id
+                },
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            localStorage.removeItem('user');
+            localStorage.setItem('user', JSON.stringify(response.data));
+        } catch (e) {
+            console.log(e.message);
+        }
+    };
+
     const handleInputChange = (e) => {
         const { id, value } = e.target;
         setResponses((prev) => ({ ...prev, [id]: value }));
@@ -49,6 +65,7 @@ const Survey = () => {
             setCurrentQuestion((prev) => prev + 1);
         } else {
             setIsCompleted(true);
+            sendResults(); // Call sendResults when the survey is completed
         }
     };
 
@@ -85,41 +102,36 @@ const Survey = () => {
     };
 
     return (
-        <ThemeProvider theme={theme}>
-            <AppBar position="static" className="bg-blue-600">
-                <Navbar />
-            </AppBar>
-            <div className="min-h-screen flex flex-col items-center bg-blue-50">
-                {/* Banner Section */}
-                <div className="w-full text-center mt-10">
-                    <h1 className="text-4xl font-bold text-blue-600">Tell us about yourself first!</h1>
-                </div>
-
-                {/* Survey Section */}
-                <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md mt-12 border-2 border-blue-300">
-                    {isCompleted ? (
-                        <>
-                            <h1 className="text-2xl font-semibold text-blue-600 mb-4">Thank you!</h1>
-                            <p className="text-gray-700 mb-6">Your responses have been recorded.</p>
-                            <pre className="bg-gray-100 p-4 rounded-md">{JSON.stringify(responses, null, 2)}</pre>
-                        </>
-                    ) : (
-                        <>
-                            <h1 className="text-2xl font-semibold text-blue-600 mb-4">
-                                {questions[currentQuestion].text}
-                            </h1>
-                            <div className="mb-6">{renderInputField(questions[currentQuestion])}</div>
-                            <button
-                                onClick={handleNext}
-                                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
-                            >
-                                Next
-                            </button>
-                        </>
-                    )}
-                </div>
+        <div className="min-h-screen flex flex-col items-center bg-blue-50">
+            {/* Banner Section */}
+            <div className="w-full text-center mt-10">
+                <h1 className="text-4xl font-bold text-blue-600">Tell us about yourself first!</h1>
             </div>
-        </ThemeProvider>
+
+            {/* Survey Section */}
+            <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md mt-12 border-2 border-blue-300">
+                {isCompleted ? (
+                    <>
+                        <h1 className="text-2xl font-semibold text-blue-600 mb-4">Thank you!</h1>
+                        <p className="text-gray-700 mb-6">Your responses have been recorded.</p>
+                        <pre className="bg-gray-100 p-4 rounded-md">{JSON.stringify(responses, null, 2)}</pre>
+                    </>
+                ) : (
+                    <>
+                        <h1 className="text-2xl font-semibold text-blue-600 mb-4">
+                            {questions[currentQuestion].text}
+                        </h1>
+                        <div className="mb-6">{renderInputField(questions[currentQuestion])}</div>
+                        <button
+                            onClick={handleNext}
+                            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
+                        >
+                            Next
+                        </button>
+                    </>
+                )}
+            </div>
+        </div>
     );
 };
 

@@ -17,7 +17,7 @@ const SignUp = () => {
     var phoneRegex = /^[\+]?[0-9]{0,3}\W?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
     let params = new URLSearchParams(window.location.search);
-    let github_id = params.get("gitHubID") || null;
+    let github_id = params.get("githubID") || null;
     let google_id = params.get("googleID") || null;
 
     const navigate = useNavigate()

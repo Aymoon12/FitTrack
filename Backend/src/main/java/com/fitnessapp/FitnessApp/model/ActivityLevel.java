@@ -8,9 +8,9 @@ public enum ActivityLevel {
     HIGH;
 
     public static ActivityLevel fromString(String activityLevel ) {
-        if(activityLevel.equals("Low"))
+        if(activityLevel.equals("low"))
             return LOW;
-        else if(activityLevel.equals("Moderate"))
+        else if(activityLevel.equals("moderate"))
             return MODERATE;
        return HIGH;
     }
