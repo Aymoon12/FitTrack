@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Navbar from "../dashboard/Navbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { AppBar } from "@mui/material";
+import HealthFitnessScreenLWGM from "./HealthFitnessScreenLWGM"
 
 
 const Nutrition = () => {
@@ -33,9 +34,7 @@ const Nutrition = () => {
             {!isCompeleted ? (
                 <Survey></Survey>
                     ) : (
-                    <div>
-
-                    </div>
+                    <HealthFitnessScreenLWGM></HealthFitnessScreenLWGM>
                     )
                 }
                 </ThemeProvider>

@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "../dashboard/Navbar";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { AppBar } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { getUser, getToken } from "../utils";
 import axios from "axios";
 
@@ -101,6 +100,12 @@ const Survey = () => {
         }
     };
 
+    const reloadScreen = () => {
+        setTimeout(() => {
+            window.location.reload();
+        }, 5000); // 5 seconds delay before refreshing the page
+    };
+
     return (
         <div className="min-h-screen flex flex-col items-center bg-blue-50">
             {/* Banner Section */}
@@ -112,9 +117,11 @@ const Survey = () => {
             <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md mt-12 border-2 border-blue-300">
                 {isCompleted ? (
                     <>
-                        <h1 className="text-2xl font-semibold text-blue-600 mb-4">Thank you!</h1>
-                        <p className="text-gray-700 mb-6">Your responses have been recorded.</p>
-                        <pre className="bg-gray-100 p-4 rounded-md">{JSON.stringify(responses, null, 2)}</pre>
+                        <div className="flex flex-col justify-center items-center space-y-4 h-32">
+                            <CircularProgress />
+                            <div className="text-blue-600 font-medium">Fetching your personalized plan!</div>
+                            {reloadScreen()}
+                        </div>
                     </>
                 ) : (
                     <>
@@ -136,4 +143,5 @@ const Survey = () => {
 };
 
 export default Survey;
+
 

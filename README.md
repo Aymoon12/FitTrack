@@ -19,7 +19,7 @@ FitTrack is a web application designed to help users track their fitness goals, 
   
 ## Access
 
-- Visit _ to access the web application.
+- Deployment Coming Soon!
   
 ## Usage
 
@@ -27,9 +27,9 @@ FitTrack is a web application designed to help users track their fitness goals, 
 
    - Sign up or log in with your credentials.
 
-2. **Set Your Goals**
+2. **Get a Personalized Plan**
 
-   - Go to the "Goals" section and set your fitness goals, such as weight loss or muscle gain.
+   - Go to the "Nutrition" section and get a personalized workout plan centralized around your goals.
 
 3. **Log Your Workouts**
 
