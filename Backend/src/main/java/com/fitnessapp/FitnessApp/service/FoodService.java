@@ -13,10 +13,7 @@ import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 @Data
@@ -111,12 +108,12 @@ public class FoodService {
 	}
 
 
-	public Long getCaloriesByDateAndUserID(Long userId, String date) {
+	public List<?> getMacrosByDateAndUserID(Long userId, String date) {
 
 		LocalDate localDate = LocalDate.parse(date);
 
 		if(userRepository.findUserById(userId).orElse(null) != null){
-			return foodRepository.findTotalCaloriesByUserIDAndDate(userId,localDate).orElse(0L);
+            return foodRepository.findMacrosByUserIDAndDate(userId,localDate).orElse(new ArrayList<>());
 		}
 		else{
 			throw new RuntimeException("No user found!");

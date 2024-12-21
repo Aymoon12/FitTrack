@@ -51,9 +51,9 @@ public class FoodController {
 	}
 
 	@GetMapping("/getCalories")
-	public ResponseEntity<Long> getCaloriesByDateAndUserID(@RequestParam Long user_id,
-														   @RequestParam String date){
-		return ResponseEntity.ok(foodService.getCaloriesByDateAndUserID(user_id,date));
+	public ResponseEntity<List<?>> getMacrosByDateAndUserID(@RequestParam Long user_id,
+																  @RequestParam String date){
+		return ResponseEntity.ok(foodService.getMacrosByDateAndUserID(user_id,date));
 	}
 
 

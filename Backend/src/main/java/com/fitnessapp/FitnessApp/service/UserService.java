@@ -164,8 +164,11 @@ public class UserService {
 		if(user.getStreak() == null){
 			user.setStreak(1L);
 		}
-		if(user.getLastSignIn().getDayOfYear() != LocalDate.now().getDayOfYear()){
+		if(user.getLastSignIn().getDayOfYear() == LocalDate.now().getDayOfYear()-1){
 			user.setStreak(user.getStreak()+1);
+		}
+		else{
+			user.setStreak(1L);
 		}
 		user.setLastSignIn(LocalDate.now());
 		userRepository.save(user);

@@ -34,5 +34,13 @@ public interface FoodRepository extends JpaRepository<Food,Long> {
 	@Query("SELECT SUM(f.calories * f.servings) FROM Food f WHERE f.user_id=?1 AND f.date_added=?2")
 	Optional<Long> findTotalCaloriesByUserIDAndDate(Long user_id, LocalDate date);
 
+	@Query("SELECT COALESCE(SUM(f.calories * f.servings), 0), " +
+			"COALESCE(SUM(f.protein_g * f.servings), 0), " +
+			"COALESCE(SUM(f.carbohydrates_total_g * f.servings), 0), " +
+			"COALESCE(SUM(f.fat_total_g * f.servings), 0) " +
+			"FROM Food f WHERE f.user_id = ?1 AND f.date_added = ?2")
+	Optional<List<?>> findMacrosByUserIDAndDate(Long user_id, LocalDate date);
+
+
 
 }

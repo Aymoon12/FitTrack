@@ -29,10 +29,13 @@ const theme = createTheme({
 
 const FitnessDashboard = () => {
     const [loading, setLoading] = useState(false);
-
+    const [macros, setMacros] = useState([])
     const [date, setDate] = useState(
         new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' })
     );
+    const [protein, setProtein] = useState(0)
+    const [carbs, setCarbs] = useState(0)
+    const [fat, setFat] = useState(0)
 
     const [caloriesConsumed, setCaloriesConsumed] = useState(0);
 
@@ -73,7 +76,7 @@ const FitnessDashboard = () => {
         labels: ['Calories Consumed', 'Remaining Calories'],
         datasets: [
             {
-                data: [caloriesConsumed, calorieGoal - caloriesConsumed],
+                data: [Math.ceil(macros[0]), calorieGoal - Math.ceil(macros[0])],
                 backgroundColor: ['#1976d2', '#f44336'],
                 hoverBackgroundColor: ['#1565c0', '#e57373'],
             },
@@ -169,7 +172,7 @@ const FitnessDashboard = () => {
 
 
 
-            const getCalories = await axios.get("http://localhost:8080/api/v1/food/getCalories",{
+            const getMacros = await axios.get("http://localhost:8080/api/v1/food/getCalories",{
                 params:{
                     user_id: user_id,
                     date: date
@@ -179,7 +182,10 @@ const FitnessDashboard = () => {
                 }
             })
 
-            setCaloriesConsumed(getCalories.data)
+            setMacros(getMacros.data[0])
+            console.log(macros[0] == null)
+
+
 
             if(localStorage.getItem('user') === null){
                 try{
@@ -204,6 +210,8 @@ const FitnessDashboard = () => {
     };
 
 
+
+
     useEffect( () => {
         setLoading(true)
         timeOfDay(hour)
@@ -215,14 +223,24 @@ const FitnessDashboard = () => {
             .then(() => {
                 const user = getUser()
                 setUsername(user.name.split(" ")[0])
-                setStreak(user.streak)}
+                setStreak(user.streak)
+
+
+
+            }
             )
             .then(getSteps)
             .finally(() => {
+
                 console.log(stepsData)
-                setLoading(false)})
+                setLoading(false)
+              })
+
+
 
     }, [hour, token]);
+
+
 
     return (
 
@@ -253,7 +271,7 @@ const FitnessDashboard = () => {
                                 <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <CardContent>
                                         <Typography variant="h6" className="text-blue-600">Calories Consumed</Typography>
-                                        <Typography variant="h4">{caloriesConsumed}/{calorieGoal}</Typography> {/* Example data */}
+                                        <Typography variant="h4">{Math.ceil(macros[0])}/{calorieGoal}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -278,29 +296,349 @@ const FitnessDashboard = () => {
 
                     {/* Charts Section */}
                     <Box sx={{ mb: 4 }} className="p-4">
+
                         <Typography variant="h6" align="center" gutterBottom className="text-blue-600">
                             Your Progress
                         </Typography>
                         <Grid container spacing={4} justifyContent="center">
                             {/* Pie Chart for Calories */}
                             <Grid item xs={12} md={6}>
-                                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300" sx={{ height: 300 }}>
+                                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300" sx={{ height: 350, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                                     <CardContent>
-                                        <Typography variant="h6" className="text-blue-600">Calories Consumed vs Goal</Typography>
+                                        {/* Title with Icon */}
+                                        <Box display="flex" alignItems="center" mb={2}>
+                                            <Box
+                                                sx={{
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    width: 40,
+                                                    height: 40,
+                                                    borderRadius: '50%',
+                                                    backgroundColor: '#1976d2',
+                                                    marginRight: 2,
+                                                }}
+                                            >
+                                                <Typography sx={{ fontSize: '20px', fontWeight: 'bold', color: '#ffffff' }}>
+                                                    🔥
+                                                </Typography>
+                                            </Box>
+                                            <Typography variant="h6" className="text-blue-600">
+                                                Calories Consumed vs Goal
+                                            </Typography>
+                                        </Box>
+
+                                        {/* Pie Chart */}
                                         <Box sx={{ height: 200 }}>
                                             <Pie data={pieData} options={chartOptions} />
                                         </Box>
                                     </CardContent>
+
+                                    {/* Button */}
+                                    <Box
+                                        sx={{
+                                            p: 2,
+                                            display: 'flex',
+                                            justifyContent: 'flex-end',
+                                            backgroundColor: '#f3f4f6',
+                                            borderTop: '1px solid #e0e0e0',
+                                            borderRadius: '0 0 8px 8px',
+                                        }}
+                                    >
+                                        <Button
+                                            variant="contained"
+                                            color="primary"
+                                            className="bg-blue-600 hover:bg-blue-700 transition duration-200"
+                                        >
+                                            Log Calories
+                                        </Button>
+                                    </Box>
                                 </Card>
                             </Grid>
 
                             {/* Bar Chart for Steps */}
                             <Grid item xs={12} md={6}>
-                                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300" sx={{ height: 300 }}>
+                                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300" sx={{ height: 350, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                                     <CardContent>
-                                        <Typography variant="h6" className="text-blue-600">Steps This Week</Typography>
+                                        {/* Title with Icon */}
+                                        <Box display="flex" alignItems="center" mb={2}>
+                                            <Box
+                                                sx={{
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    width: 40,
+                                                    height: 40,
+                                                    borderRadius: '50%',
+                                                    backgroundColor: '#1976d2',
+                                                    marginRight: 2,
+                                                }}
+                                            >
+                                                <Typography sx={{ fontSize: '20px', fontWeight: 'bold', color: '#ffffff' }}>
+                                                    🚶
+                                                </Typography>
+                                            </Box>
+                                            <Typography variant="h6" className="text-blue-600">
+                                                Steps This Week
+                                            </Typography>
+                                        </Box>
+
+                                        {/* Bar Chart */}
                                         <Box sx={{ height: 200 }}>
                                             <Bar data={barData} options={chartOptions} />
+                                        </Box>
+                                    </CardContent>
+
+                                    {/* Button */}
+                                    <Box
+                                        sx={{
+                                            p: 2,
+                                            display: 'flex',
+                                            justifyContent: 'flex-end',
+                                            backgroundColor: '#f3f4f6',
+                                            borderTop: '1px solid #e0e0e0',
+                                            borderRadius: '0 0 8px 8px',
+                                        }}
+                                    >
+                                        <Button
+                                            variant="contained"
+                                            color="primary"
+                                            className="bg-blue-600 hover:bg-blue-700 transition duration-200"
+                                        >
+                                            Log Steps
+                                        </Button>
+                                    </Box>
+                                </Card>
+                            </Grid>
+
+                            <Grid item xs={12} md={6}>
+                                {/* Today's Ongoing Goals Section */}
+                                <Card
+                                    className="shadow-lg hover:shadow-xl transition-shadow duration-300"
+                                    sx={{
+                                        minHeight: 200,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'space-between',
+                                        borderRadius: 4,
+                                    }}
+                                >
+                                    <CardContent>
+                                        {/* Title with Icon */}
+                                        <Box display="flex" alignItems="center" mb={2}>
+                                            <Box
+                                                sx={{
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    width: 40,
+                                                    height: 40,
+                                                    borderRadius: '50%',
+                                                    backgroundColor: '#1976d2',
+                                                    marginRight: 2,
+                                                }}
+                                            >
+                                                <Typography
+                                                    sx={{ fontSize: '20px', fontWeight: 'bold', color: '#ffffff' }}
+                                                >
+                                                    🎯
+                                                </Typography>
+                                            </Box>
+                                            <Typography variant="h6" className="text-blue-600">
+                                                Today's Ongoing Goals
+                                            </Typography>
+                                        </Box>
+
+                                        {/* Content */}
+                                        <Box sx={{ mt: 2 }}>
+                                            <Typography variant="body2">Protein</Typography>
+                                            <Box sx={{ backgroundColor: '#e0e0e0', borderRadius: 2, height: 8 }}>
+                                                <Box
+                                                    sx={{
+                                                        width: `${macros[1]}%`,
+                                                        backgroundColor: '#1976d2',
+                                                        height: '100%',
+                                                        borderRadius: 2,
+                                                    }}
+                                                />
+                                            </Box>
+                                            <Typography variant="caption">{Math.ceil(macros[1])} / 100g</Typography>
+                                        </Box>
+                                        <Box sx={{ mt: 2 }}>
+                                            <Typography variant="body2">Carbohydrates</Typography>
+                                            <Box sx={{ backgroundColor: '#e0e0e0', borderRadius: 2, height: 8 }}>
+                                                <Box
+                                                    sx={{
+                                                        width: `${macros[2]}%`,
+                                                        backgroundColor: '#1976d2',
+                                                        height: '100%',
+                                                        borderRadius: 2,
+                                                    }}
+                                                />
+                                            </Box>
+                                            <Typography variant="caption">{Math.ceil(macros[2])} / 300g</Typography>
+                                        </Box>
+                                        <Box sx={{ mt: 2 }}>
+                                            <Typography variant="body2">Fat</Typography>
+                                            <Box sx={{ backgroundColor: '#e0e0e0', borderRadius: 2, height: 8 }}>
+                                                <Box
+                                                    sx={{
+                                                        width: `${macros[3]}%`,
+                                                        backgroundColor: '#1976d2',
+                                                        height: '100%',
+                                                        borderRadius: 2,
+                                                    }}
+                                                />
+                                            </Box>
+                                            <Typography variant="caption">{Math.ceil(macros[3])} / 100g</Typography>
+                                        </Box>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+
+                            <Grid item xs={12} md={6}>
+                                {/* Achievements Section */}
+                                <Card
+                                    className="shadow-lg hover:shadow-xl transition-shadow duration-300"
+                                    sx={{
+                                        minHeight: 200,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'space-between',
+                                        borderRadius: 4,
+                                    }}
+                                >
+                                    <CardContent>
+                                        {/* Title with Icon */}
+                                        <Box display="flex" alignItems="center" mb={2}>
+                                            <Box
+                                                sx={{
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    width: 40,
+                                                    height: 40,
+                                                    borderRadius: '50%',
+                                                    backgroundColor: '#1976d2',
+                                                    marginRight: 2,
+                                                }}
+                                            >
+                                                <Typography
+                                                    sx={{ fontSize: '20px', fontWeight: 'bold', color: '#ffffff' }}
+                                                >
+                                                    🏆
+                                                </Typography>
+                                            </Box>
+                                            <Typography variant="h6" className="text-blue-600">
+                                                Achievements
+                                            </Typography>
+                                        </Box>
+
+                                        {/* Content */}
+                                        <Typography variant="body2" color="text.secondary">
+                                            - Longest Streak: 10 days
+                                            <br />
+                                            - Most Steps in a Day: 15,000 steps
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+
+                        </Grid>
+                    </Box>
+
+                    <Box sx={{ mb: 4 }} className="p-4">
+                        <Typography variant="h6" align="center" gutterBottom className="text-blue-600 mt-20">
+                            Your Fitness Insights
+                        </Typography>
+                        <Grid container spacing={4} justifyContent="center">
+                            {/* Log Your Workouts */}
+                            <Grid item xs={12} md={6}>
+                                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                    <CardContent>
+                                        {/* Title with Icon */}
+                                        <Box display="flex" alignItems="center" mb={2}>
+                                            <Box
+                                                sx={{
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    width: 40,
+                                                    height: 40,
+                                                    borderRadius: '50%',
+                                                    backgroundColor: '#1976d2',
+                                                    marginRight: 2,
+                                                }}
+                                            >
+                                                <Typography sx={{ fontSize: '20px', fontWeight: 'bold', color: '#ffffff' }}>
+                                                    🏋️
+                                                </Typography>
+                                            </Box>
+                                            <Typography variant="h5" className="text-blue-600">
+                                                Log Your Workouts
+                                            </Typography>
+                                        </Box>
+
+                                        {/* Description */}
+                                        <Typography variant="body2" color="text.secondary">
+                                            Keep track of your workouts and monitor your performance.
+                                        </Typography>
+
+                                        {/* Button */}
+                                        <Box display="flex" justifyContent="flex-end" sx={{ mt: 2 }}>
+                                            <Button
+                                                variant="contained"
+                                                color="primary"
+                                                className="bg-blue-600 hover:bg-blue-700 transition duration-200"
+                                            >
+                                                Log Workout
+                                            </Button>
+                                        </Box>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+
+                            {/* Nutrition Tips */}
+                            <Grid item xs={12} md={6}>
+                                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                    <CardContent>
+                                        {/* Title with Icon */}
+                                        <Box display="flex" alignItems="center" mb={2}>
+                                            <Box
+                                                sx={{
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    width: 40,
+                                                    height: 40,
+                                                    borderRadius: '50%',
+                                                    backgroundColor: '#1976d2',
+                                                    marginRight: 2,
+                                                }}
+                                            >
+                                                <Typography sx={{ fontSize: '20px', fontWeight: 'bold', color: '#ffffff' }}>
+                                                    🥗
+                                                </Typography>
+                                            </Box>
+                                            <Typography variant="h5" className="text-blue-600">
+                                                Nutrition Tips
+                                            </Typography>
+                                        </Box>
+
+                                        {/* Description */}
+                                        <Typography variant="body2" color="text.secondary">
+                                            Get personalized nutrition tips to enhance your fitness journey.
+                                        </Typography>
+
+                                        {/* Button */}
+                                        <Box display="flex" justifyContent="flex-end" sx={{ mt: 2 }}>
+                                            <Button
+                                                variant="contained"
+                                                color="primary"
+                                                className="bg-blue-600 hover:bg-blue-700 transition duration-200"
+                                            >
+                                                Get Tips
+                                            </Button>
                                         </Box>
                                     </CardContent>
                                 </Card>
@@ -308,96 +646,6 @@ const FitnessDashboard = () => {
                         </Grid>
                     </Box>
 
-                    {/* Main Grid Sections */}
-                    <Grid container spacing={4}>
-                        {/* Track Your Calories */}
-                        <Grid item xs={12} md={6}>
-                            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <CardContent>
-                                    <Typography variant="h5" gutterBottom className="text-blue-600">
-                                        Track Your Calories
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        Log your daily calorie intake and track your progress.
-                                    </Typography>
-                                    <Button
-                                        variant="contained"
-                                        color="primary"
-                                        sx={{ mt: 2 }}
-                                        className="bg-blue-600 hover:bg-blue-700 transition duration-200"
-                                    >
-                                        Log Calories
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-
-                        {/* Log Your Workouts */}
-                        <Grid item xs={12} md={6}>
-                            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <CardContent>
-                                    <Typography variant="h5" gutterBottom className="text-blue-600">
-                                        Log Your Workouts
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        Keep track of your workouts and monitor your performance.
-                                    </Typography>
-                                    <Button
-                                        variant="contained"
-                                        color="primary"
-                                        sx={{ mt: 2 }}
-                                        className="bg-blue-600 hover:bg-blue-700 transition duration-200"
-                                    >
-                                        Log Workout
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-
-                        {/* Weekly Progress */}
-                        <Grid item xs={12} md={6}>
-                            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <CardContent>
-                                    <Typography variant="h5" gutterBottom className="text-blue-600">
-                                        Weekly Progress
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        View your progress over the week with charts and stats.
-                                    </Typography>
-                                    <Button
-                                        variant="contained"
-                                        color="primary"
-                                        sx={{ mt: 2 }}
-                                        className="bg-blue-600 hover:bg-blue-700 transition duration-200"
-                                    >
-                                        View Progress
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-
-                        {/* Nutrition Tips */}
-                        <Grid item xs={12} md={6}>
-                            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <CardContent>
-                                    <Typography variant="h5" gutterBottom className="text-blue-600">
-                                        Nutrition Tips
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        Get personalized nutrition tips to enhance your fitness journey.
-                                    </Typography>
-                                    <Button
-                                        variant="contained"
-                                        color="primary"
-                                        sx={{ mt: 2 }}
-                                        className="bg-blue-600 hover:bg-blue-700 transition duration-200"
-                                    >
-                                        Get Tips
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    </Grid>
 
                     {/* Motivational Section */}
                     <Box sx={{ mt: 4 }} className="p-4">
