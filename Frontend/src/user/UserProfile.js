@@ -8,6 +8,7 @@ import axios from "axios";
 import {Toggle2Factor} from "../buttons/Toggle2Factor.js"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import defaultPic from './Default_pfp.jpg'
 
 const UserProfile = () => {
     const theme = createTheme({
@@ -236,8 +237,8 @@ const UserProfile = () => {
                     <h1 className="text-2xl font-bold mb-4">Account Settings</h1>
                     <img
                         className="rounded-full w-96 h-96"
-                        src={currentProfilePic}
-                        alt="Profile"
+                        src={currentProfilePic || defaultPic}
+                        alt="Profile Pic"
                     />
 
                     <div className="mt-5">

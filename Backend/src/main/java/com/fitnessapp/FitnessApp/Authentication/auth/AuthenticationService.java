@@ -13,6 +13,7 @@ import com.fitnessapp.FitnessApp.repository.UserRepository;
 import com.fitnessapp.FitnessApp.requests.LoginRequest;
 import com.fitnessapp.FitnessApp.requests.OTPRequest;
 import com.fitnessapp.FitnessApp.requests.SignUpRequest;
+import com.fitnessapp.FitnessApp.service.UserGoalsService;
 import com.fitnessapp.FitnessApp.service.UserService;
 import com.fitnessapp.FitnessApp.utils.OTPUtils;
 import jakarta.mail.MessagingException;
@@ -37,6 +38,7 @@ public class AuthenticationService {
 	private final EmailService emailService;
 	private final TwoFactorOTPRepository twoFactorOTPRepository;
 	private final UserService userService;
+	private final UserGoalsService userGoalsService;
 
 	public AuthenticationResponse register(SignUpRequest request){
 
@@ -71,6 +73,7 @@ public class AuthenticationService {
 			user.setStreak(1L);
 			user.setLastSignIn(LocalDate.now());
 			user.setCompletedSurvey(false);
+
 		if (request.getGithub_id() != null){
 			user.setGitHubID(request.getGithub_id());
 		}
@@ -86,21 +89,35 @@ public class AuthenticationService {
 		response.setToken(jwtToken);
 		response.setTwoFactorEnabled(false);
 		userRepository.save(user);
+		user.setUserGoals(userGoalsService.baseGoals(user.getID()));
+		userRepository.save(user);
 		return response;
 	}
 
 	public AuthenticationResponse authenticate(LoginRequest loginRequest) {
 
-		authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(
-						loginRequest.getUsername(),
-						loginRequest.getPassword()
-				)
-		);
+		try {
+			authenticationManager.authenticate(
+					new UsernamePasswordAuthenticationToken(
+							loginRequest.getUsername(),
+							loginRequest.getPassword()
+					)
+			);
+		}
+		catch (Exception e) {
+			return AuthenticationResponse.builder()
+					.message("Incorrect username or password!")
+					.build();
+		}
 
-		var user = userRepository.findUserByUsername(loginRequest.getUsername())
+        var user = userRepository.findUserByUsername(loginRequest.getUsername())
 				.orElseThrow(() ->
 						new UsernameNotFoundException("Username not found!"));
+
+		if(user.getUserGoals() == null){
+			user.setUserGoals(userGoalsService.baseGoals(user.getID()));
+			userRepository.save(user);
+		}
 
 
 		if(user.getTwoFactorAuth().isEnabled()){

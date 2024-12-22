@@ -43,6 +43,7 @@ const defaultTheme = createTheme();
 export default function SignInSide() {
     const [step, setStep] = useState(1)
     const navigate = useNavigate();
+    const [error, setError] = useState(false)
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -64,7 +65,10 @@ export default function SignInSide() {
                 }
             });
 
-            if(response.status === 200){
+            if(response.data.message === "Incorrect username or password!"){
+                setError(true)
+            }
+            else if(response.status === 200){
                 console.log(response)
                 console.log("Success")
 
@@ -86,9 +90,14 @@ export default function SignInSide() {
                 console.log(response)
             }
         } catch (error){
-            console.log(error.message)
+            console.log(error)
+            setError(true)
         }
     };
+
+    const handleInputChange = () =>{
+        setError(false)
+    }
 
     const handleGitHubLogin = () => {
 
@@ -152,6 +161,9 @@ export default function SignInSide() {
                                 name="username"
                                 autoComplete="username"
                                 autoFocus
+                                error={error}
+                                helperText={error ?'Username may be incorrect' : ''}
+                                onChange={handleInputChange}
                             />
                             <TextField
                                 margin="normal"
@@ -162,6 +174,10 @@ export default function SignInSide() {
                                 type="password"
                                 id="password"
                                 autoComplete="current-password"
+                                error={error}
+                                helperText={error ?'Password may be incorrect' : ''}
+                                onChange={handleInputChange}
+
                             />
                             <FormControlLabel
                                 control={<Checkbox value="remember" color="primary" />}

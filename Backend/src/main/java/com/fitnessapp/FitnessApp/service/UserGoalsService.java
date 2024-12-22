@@ -15,6 +15,19 @@ public class UserGoalsService {
 	private final UserGoalsRepository userGoalsRepository;
 	private final UserRepository userRepository;
 
+	public UserGoals baseGoals(Long user_id){
+		UserGoals usergoals =  UserGoals.builder()
+				.goalCalories(2000L)
+				.goalFats(60L)
+				.goalProtein(100L)
+				.goalCarbohydrates(250L)
+				.goalSteps(10000L)
+				.user_id(user_id)
+				.build();
+		userGoalsRepository.save(usergoals);
+		return usergoals;
+	}
+
 	public String updateGoals(UserGoalsRequest ugr) {
 
 

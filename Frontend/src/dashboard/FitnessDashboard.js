@@ -53,6 +53,11 @@ const FitnessDashboard = () => {
     const user_id = params.get('userId') || getUser().id;
     const token = params.get('token') || getToken();
     const [calorieGoal, setCalorieGoal] = useState('')
+    const [proteinGoal, setProteinGoal] = useState('')
+    const [fatGoal, setFatGoal] = useState('')
+    const [carbGoal, setCarbGoal] = useState('')
+
+
     const hour = new Date().getHours();
     const [greeting, setGreeting] = useState('')
     const [userName, setUsername] = useState('')
@@ -167,8 +172,14 @@ const FitnessDashboard = () => {
           if(response.data.length === 0){
               setCalorieGoal(2000)
             }
-            else
-                setCalorieGoal(response.data.goalCalories)
+          else{
+              setCalorieGoal(response.data.goalCalories)
+              setFatGoal(response.data.goalFats)
+              setProteinGoal(response.data.goalProtein)
+              setCarbGoal(response.data.goalCarbohydrates)
+          }
+
+
 
 
 
@@ -257,7 +268,7 @@ const FitnessDashboard = () => {
                     {/* Welcome Banner */}
                     <Box sx={{ my: 4 }} className="p-4">
                         <Typography variant="h4" align="center" gutterBottom className="text-blue-800 font-bold">
-                            {greeting}, {userName}! {/* Replace with actual user's name */}
+                            {greeting}, {userName}!
                         </Typography>
                     </Box>
 
@@ -455,42 +466,42 @@ const FitnessDashboard = () => {
                                             <Box sx={{ backgroundColor: '#e0e0e0', borderRadius: 2, height: 8 }}>
                                                 <Box
                                                     sx={{
-                                                        width: `${macros[1]}%`,
+                                                        width: `${Math.ceil((macros[1]/proteinGoal) * 100)}%`,
                                                         backgroundColor: '#1976d2',
                                                         height: '100%',
                                                         borderRadius: 2,
                                                     }}
                                                 />
                                             </Box>
-                                            <Typography variant="caption">{Math.ceil(macros[1])} / 100g</Typography>
+                                            <Typography variant="caption">{Math.ceil(macros[1])} / {proteinGoal}g</Typography>
                                         </Box>
                                         <Box sx={{ mt: 2 }}>
                                             <Typography variant="body2">Carbohydrates</Typography>
                                             <Box sx={{ backgroundColor: '#e0e0e0', borderRadius: 2, height: 8 }}>
                                                 <Box
                                                     sx={{
-                                                        width: `${macros[2]}%`,
+                                                        width: `${Math.ceil((macros[2]/carbGoal) * 100)}%`,
                                                         backgroundColor: '#1976d2',
                                                         height: '100%',
                                                         borderRadius: 2,
                                                     }}
                                                 />
                                             </Box>
-                                            <Typography variant="caption">{Math.ceil(macros[2])} / 300g</Typography>
+                                            <Typography variant="caption">{Math.ceil(macros[2])} / {carbGoal}g</Typography>
                                         </Box>
                                         <Box sx={{ mt: 2 }}>
                                             <Typography variant="body2">Fat</Typography>
                                             <Box sx={{ backgroundColor: '#e0e0e0', borderRadius: 2, height: 8 }}>
                                                 <Box
                                                     sx={{
-                                                        width: `${macros[3]}%`,
+                                                        width: `${Math.ceil((macros[3]/fatGoal) * 100)}%`,
                                                         backgroundColor: '#1976d2',
                                                         height: '100%',
                                                         borderRadius: 2,
                                                     }}
                                                 />
                                             </Box>
-                                            <Typography variant="caption">{Math.ceil(macros[3])} / 100g</Typography>
+                                            <Typography variant="caption">{Math.ceil(macros[3])} / {fatGoal}g</Typography>
                                         </Box>
                                     </CardContent>
                                 </Card>
