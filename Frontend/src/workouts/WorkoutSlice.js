@@ -4,6 +4,8 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import axios from "axios";
 import {getToken, getUser} from "../utils";
 
+import {LOGOUT} from "../dashboard/Navbar"
+
 export const fetchWorkouts = createAsyncThunk(
     'workouts/fetchWorkouts',
     async (muscleGroup) => {
@@ -46,7 +48,13 @@ const workoutSlice = createSlice({
             .addCase(fetchWorkouts.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message;
-            });
+            })
+            .addCase(LOGOUT, (state, action) => {
+                state.workouts = [];
+                state.status = 'idle';
+                state.error = null;
+
+        });
     },
 });
 

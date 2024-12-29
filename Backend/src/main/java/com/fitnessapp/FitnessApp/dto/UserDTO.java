@@ -29,6 +29,8 @@ public class UserDTO {
 	private Double weight;
 	private ActivityLevel activityLevel;
 	private HealthGoal healthGoal;
+	private Long longestStreak;
+	private Long mostSteps;
 
 
 	public static UserDTO userToUserDTO(User user) {
@@ -48,6 +50,8 @@ public class UserDTO {
 				.weight(user.getWeight())
 				.activityLevel(user.getActivityLevel())
 				.healthGoal(user.getHealthGoal())
+				.longestStreak(user.getLongestStreak())
+				.mostSteps(user.getMostSteps())
 				.build();
 
 

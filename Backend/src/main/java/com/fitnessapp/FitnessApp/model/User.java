@@ -88,6 +88,9 @@ public class User implements UserDetails {
 	@Enumerated
 	private HealthGoal healthGoal;
 
+	private Long longestStreak;
+	private Long mostSteps;
+
 
 
 	@Override

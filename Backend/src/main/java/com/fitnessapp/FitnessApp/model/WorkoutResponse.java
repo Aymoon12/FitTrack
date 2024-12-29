@@ -16,5 +16,6 @@ public class WorkoutResponse {
 	private String pictureURL;
 	private String description;
 	private String name;
+	private String muscleGroup;
 
 }

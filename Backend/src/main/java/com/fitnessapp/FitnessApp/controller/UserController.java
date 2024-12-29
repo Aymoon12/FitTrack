@@ -77,6 +77,11 @@ public class UserController {
 
 	}
 
+	@GetMapping("/getMostSteps")
+	public ResponseEntity<Long> getMostSteps(@RequestParam Long user_id){
+		return ResponseEntity.ok(userService.getMostSteps(user_id));
+	}
+
 
 
 

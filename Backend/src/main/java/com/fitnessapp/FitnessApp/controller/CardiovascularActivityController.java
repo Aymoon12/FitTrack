@@ -16,11 +16,12 @@ import java.util.Map;
 @AllArgsConstructor
 public class CardiovascularActivityController {
 
+
     private final CardiovascularActivityService cardiovascularActivityService;
 
     @PostMapping("/logStep")
-    ResponseEntity<?> logDailyStep(@RequestBody CardiovascularActivityRequest cardio){
-        return ResponseEntity.ok(cardiovascularActivityService.logDailyStep(cardio));
+    ResponseEntity<?> logDailyStep(@RequestBody CardiovascularActivityRequest cardiovascularActivityRequest){
+        return ResponseEntity.ok(cardiovascularActivityService.logDailyStep(cardiovascularActivityRequest));
 
     }
 

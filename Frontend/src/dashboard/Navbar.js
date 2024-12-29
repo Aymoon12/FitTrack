@@ -2,15 +2,23 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+
+
+export const LOGOUT = 'LOGOUT'
 
 
 
 const Navbar = () => {
 
+    const dispatch = useDispatch();
+
     const handleLogout = () =>{
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         localStorage.removeItem('uuid')
+        dispatch({type:LOGOUT})
 
     }
     return (

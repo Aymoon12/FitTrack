@@ -15,31 +15,40 @@ import {useNavigate} from "react-router-dom";
 
 const muscleGroups = [
     'chest',
-    'Back',
-    'Legs',
-    'Arms',
-    'Shoulders',
+    'back',
+    'legs',
+    'arms',
+    'shoulders',
 ];
 
 const WorkoutRecommendation = () => {
     const dispatch = useDispatch();
     const workouts = useSelector(selectWorkouts);
-    const [selectedMuscle, setSelectedMuscle] = React.useState('');
+    const [selectedMuscle, setSelectedMuscle] = useState('');
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedWorkout, setSelectedWorkout] = useState('')
     const user = getUser()
     const token = getToken()
     const [date,setDate] = useState('')
     const navigate = useNavigate()
-    useEffect(() => {
 
+
+    useEffect(() => {
         if (selectedMuscle) {
             dispatch(fetchWorkouts(selectedMuscle));
-            let params = new URLSearchParams(window.location.search);
-            let d = params.get('date')
-            setDate(d)
+
+            const params = new URLSearchParams(window.location.search);
+            const d = params.get('date');
+            setDate(d);
         }
     }, [selectedMuscle, dispatch]);
+
+
+    useEffect(() => {
+        if (workouts && workouts.length > 0) {
+            setSelectedMuscle(workouts[0].muscleGroup);
+        }
+    }, [workouts]);
 
     const theme = createTheme({
         palette: {

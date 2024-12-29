@@ -1,7 +1,10 @@
 package com.fitnessapp.FitnessApp.service;
 
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.*;
+import com.amazonaws.services.s3.model.ListObjectsV2Request;
+import com.amazonaws.services.s3.model.ListObjectsV2Result;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.fitnessapp.FitnessApp.model.User;
 import com.fitnessapp.FitnessApp.model.WorkoutResponse;
 import com.fitnessapp.FitnessApp.repository.UserRepository;
@@ -13,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 @Log4j2
@@ -122,6 +124,7 @@ public class S3Service {
 
 		for (String pictureName : pictureNames) {
 			WorkoutResponse response = new WorkoutResponse();
+			response.setMuscleGroup(muscleGroup);
 
 			// Create a URL for the picture
 			String pictureUrl = s3client.getUrl(bucketName, pictureName).toString();

@@ -8,6 +8,7 @@ import {
     CardContent,
     Button,
     Box, CircularProgress,
+    Modal
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from './Navbar';
@@ -15,6 +16,8 @@ import { Pie, Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from 'chart.js';
 import {getUser,getToken} from "../utils";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
 
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
@@ -39,6 +42,7 @@ const FitnessDashboard = () => {
 
     const [caloriesConsumed, setCaloriesConsumed] = useState(0);
 
+    const navigate = useNavigate()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     let params = new URLSearchParams(window.location.search);
 
@@ -49,8 +53,9 @@ const FitnessDashboard = () => {
     const [fri, setFri] = useState(0)
     const [sat, setSat] = useState(0)
     const [sun, setSun] = useState(0)
+    const user = getUser()
     const stepsData = [mon, tues, wed, thur, fri, sat, sun];
-    const user_id = params.get('userId') || getUser().id;
+    const user_id = params.get('userId') || user.id;
     const token = params.get('token') || getToken();
     const [calorieGoal, setCalorieGoal] = useState('')
     const [proteinGoal, setProteinGoal] = useState('')
@@ -62,6 +67,14 @@ const FitnessDashboard = () => {
     const [greeting, setGreeting] = useState('')
     const [userName, setUsername] = useState('')
     const [streak, setStreak] = useState('')
+
+    const [steps, setSteps] = useState(0)
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const [mostSteps, setMostSteps] = useState(0)
+    const [longestStreak, setLongestStreak] = useState(0)
+
 
 
 
@@ -179,19 +192,37 @@ const FitnessDashboard = () => {
               setCarbGoal(response.data.goalCarbohydrates)
           }
 
+          const getMostSteps = await axios.get("http://localhost:8080/api/v1/user/getMostSteps",{
+              params: {
+                  user_id: user_id,
+              },
+              headers: {
+                  'Authorization': `Bearer ${token}`,
+              }
+          });
+
+          if(getMostSteps.status === 200){
+              setMostSteps(getMostSteps.data)
+              setLongestStreak(user.longestStreak)
+          }
 
 
 
 
-            const getMacros = await axios.get("http://localhost:8080/api/v1/food/getCalories",{
-                params:{
-                    user_id: user_id,
-                    date: date
-                },
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                }
-            })
+
+
+
+
+
+          const getMacros = await axios.get("http://localhost:8080/api/v1/food/getCalories",{
+              params:{
+                  user_id: user_id,
+                  date: date
+              },
+              headers: {
+                  'Authorization': `Bearer ${token}`,
+              }
+          })
 
             setMacros(getMacros.data[0])
             console.log(macros[0] == null)
@@ -218,6 +249,38 @@ const FitnessDashboard = () => {
 
 
 
+    };
+
+    const logSteps = async () => {
+
+        const stepRequest = {
+            user_id: user_id,
+            dailySteps: steps
+        }
+        try{
+            const log = await axios.post('http://localhost:8080/api/v1/cardio/logStep', stepRequest, {
+
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+
+            if(log.status === 200){
+                window.location.reload()
+            }
+        } catch(e){
+            console.log(e)
+        }
+
+    }
+
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalIsOpen(false);
     };
 
 
@@ -250,6 +313,18 @@ const FitnessDashboard = () => {
 
 
     }, [hour, token]);
+
+    const handleWorkoutButton = () =>{
+        navigate("/workouts")
+    }
+
+    const handleTipButton = () => {
+        navigate("/nutrition")
+    }
+
+    const handleCalButton = () => {
+        navigate("/trackcalories")
+    }
 
 
 
@@ -360,6 +435,7 @@ const FitnessDashboard = () => {
                                             variant="contained"
                                             color="primary"
                                             className="bg-blue-600 hover:bg-blue-700 transition duration-200"
+                                            onClick={handleCalButton}
                                         >
                                             Log Calories
                                         </Button>
@@ -415,6 +491,7 @@ const FitnessDashboard = () => {
                                             variant="contained"
                                             color="primary"
                                             className="bg-blue-600 hover:bg-blue-700 transition duration-200"
+                                            onClick={openModal}
                                         >
                                             Log Steps
                                         </Button>
@@ -547,9 +624,9 @@ const FitnessDashboard = () => {
 
                                         {/* Content */}
                                         <Typography variant="body2" color="text.secondary">
-                                            - Longest Streak: 10 days
+                                            - Longest Streak: {longestStreak} days
                                             <br />
-                                            - Most Steps in a Day: 15,000 steps
+                                            - Most Steps in a Day: {mostSteps} steps
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -560,7 +637,7 @@ const FitnessDashboard = () => {
 
                     <Box sx={{ mb: 4 }} className="p-4">
                         <Typography variant="h6" align="center" gutterBottom className="text-blue-600 mt-20">
-                            Your Fitness Insights
+                            Quick Links
                         </Typography>
                         <Grid container spacing={4} justifyContent="center">
                             {/* Log Your Workouts */}
@@ -601,6 +678,7 @@ const FitnessDashboard = () => {
                                                 variant="contained"
                                                 color="primary"
                                                 className="bg-blue-600 hover:bg-blue-700 transition duration-200"
+                                                onClick={handleWorkoutButton}
                                             >
                                                 Log Workout
                                             </Button>
@@ -647,6 +725,7 @@ const FitnessDashboard = () => {
                                                 variant="contained"
                                                 color="primary"
                                                 className="bg-blue-600 hover:bg-blue-700 transition duration-200"
+                                                onClick={handleTipButton}
                                             >
                                                 Get Tips
                                             </Button>
@@ -667,6 +746,60 @@ const FitnessDashboard = () => {
                             Streak: {streak} days
                         </Typography>
                     </Box>
+
+                    {modalIsOpen && (
+                        <Modal
+                            open={modalIsOpen}
+                            onClose={closeModal} // Pass the function reference, not the invocation
+                            aria-labelledby="log-steps"
+                            aria-describedby="log-steps-description"
+                        >
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    top: '50%',
+                                    left: '50%',
+                                    transform: 'translate(-50%, -50%)',
+                                    backgroundColor: 'white',
+                                    boxShadow: 24,
+                                    padding: '20px',
+                                    borderRadius: '8px',
+                                    width: '300px',
+                                }}
+                            >
+                                <div className="modal-body">
+                                    <h1 className="text-xl font-bold">Log Steps</h1>
+                                    <label className="block mb-2 mt-5">Steps: </label>
+                                    <input
+                                        type="number"
+                                        value={steps}
+                                        onChange={(e) => setSteps(e.target.value)}
+                                        className="border border-gray-300 p-2 rounded w-full"
+                                        min="1"
+                                        step="1"
+                                    />
+                                </div>
+                                <div className="modal-footer mt-4 flex justify-end gap-2">
+                                    <button
+                                        onClick={() => {
+                                            logSteps(); // Optional function to log steps
+                                            closeModal();
+                                        }}
+                                        className="bg-green-500 text-white p-2 rounded hover:bg-green-700"
+                                    >
+                                        Log
+                                    </button>
+                                    <button
+                                        onClick={closeModal}
+                                        className="bg-red-500 text-white p-2 rounded hover:bg-red-700"
+                                    >
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </Modal>
+                    )}
+
                 </Container>
             )}
 

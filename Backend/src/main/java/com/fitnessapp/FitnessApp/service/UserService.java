@@ -165,8 +165,16 @@ public class UserService {
 			user.setStreak(1L);
 		}
 
+		if(user.getLongestStreak() == null){
+			user.setLongestStreak(1L);
+		}
+
 		if(user.getLastSignIn().getDayOfYear() == LocalDate.now().getDayOfYear()-1){
+			if(user.getLongestStreak() < user.getStreak() + 1){
+				user.setLongestStreak(user.getStreak() + 1);
+			}
 			user.setStreak(user.getStreak()+1);
+
 		}
 		else if(user.getLastSignIn().getDayOfYear() != LocalDate.now().getDayOfYear()){
 			user.setStreak(1L);
@@ -196,4 +204,11 @@ public class UserService {
 
 
     }
+
+	public Long getMostSteps(Long userId) {
+
+		User user = userRepository.findUserById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+
+		return user.getMostSteps();
+	}
 }
