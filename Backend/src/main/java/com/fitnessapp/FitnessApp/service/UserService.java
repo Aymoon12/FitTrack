@@ -3,10 +3,7 @@ package com.fitnessapp.FitnessApp.service;
 import com.fitnessapp.FitnessApp.Authentication.TwoFactor.VerificationType;
 import com.fitnessapp.FitnessApp.Authentication.config.JwtService;
 import com.fitnessapp.FitnessApp.dto.UserDTO;
-import com.fitnessapp.FitnessApp.model.ActivityLevel;
-import com.fitnessapp.FitnessApp.model.HealthGoal;
-import com.fitnessapp.FitnessApp.model.Response;
-import com.fitnessapp.FitnessApp.model.User;
+import com.fitnessapp.FitnessApp.model.*;
 import com.fitnessapp.FitnessApp.repository.UserRepository;
 import com.fitnessapp.FitnessApp.requests.SurveyResults;
 import com.fitnessapp.FitnessApp.requests.UpdateInfoRequest;
@@ -18,6 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.fitnessapp.FitnessApp.model.AchievementsResponse;
 
 import java.time.LocalDate;
 
@@ -205,10 +203,13 @@ public class UserService {
 
     }
 
-	public Long getMostSteps(Long userId) {
+	public AchievementsResponse getMostStepsAndLongestStreak(Long userId) {
 
 		User user = userRepository.findUserById(userId).orElseThrow(() -> new RuntimeException("User not found"));
 
-		return user.getMostSteps();
+		return AchievementsResponse.builder()
+				.mostSteps(user.getMostSteps())
+				.longestStreak(user.getLongestStreak())
+				.build();
 	}
 }

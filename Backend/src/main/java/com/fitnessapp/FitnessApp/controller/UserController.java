@@ -12,6 +12,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.fitnessapp.FitnessApp.model.AchievementsResponse;
+
 
 @RestController
 @CrossOrigin
@@ -78,11 +80,9 @@ public class UserController {
 	}
 
 	@GetMapping("/getMostSteps")
-	public ResponseEntity<Long> getMostSteps(@RequestParam Long user_id){
-		return ResponseEntity.ok(userService.getMostSteps(user_id));
+	public ResponseEntity<AchievementsResponse> getMostStepsAndLongestStreak(@RequestParam Long user_id){
+		return ResponseEntity.ok(userService.getMostStepsAndLongestStreak(user_id));
 	}
-
-
 
 
 }

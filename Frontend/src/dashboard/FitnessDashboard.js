@@ -53,9 +53,10 @@ const FitnessDashboard = () => {
     const [fri, setFri] = useState(0)
     const [sat, setSat] = useState(0)
     const [sun, setSun] = useState(0)
-    const user = getUser()
+
     const stepsData = [mon, tues, wed, thur, fri, sat, sun];
-    const user_id = params.get('userId') || user.id;
+
+    const user_id = params.get('userId') || getUser().id;
     const token = params.get('token') || getToken();
     const [calorieGoal, setCalorieGoal] = useState('')
     const [proteinGoal, setProteinGoal] = useState('')
@@ -201,9 +202,16 @@ const FitnessDashboard = () => {
               }
           });
 
+          console.log(getMostSteps)
           if(getMostSteps.status === 200){
-              setMostSteps(getMostSteps.data)
-              setLongestStreak(user.longestStreak)
+              if(getMostSteps.data.mostSteps === null){
+                  setMostSteps(0)
+              }
+              else
+                  setMostSteps(getMostSteps.data.mostSteps)
+
+              setLongestStreak(getMostSteps.data.longestStreak)
+
           }
 
 
@@ -298,9 +306,6 @@ const FitnessDashboard = () => {
                 const user = getUser()
                 setUsername(user.name.split(" ")[0])
                 setStreak(user.streak)
-
-
-
             }
             )
             .then(getSteps)
