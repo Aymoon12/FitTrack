@@ -17,8 +17,6 @@ const Survey = () => {
             text: "What are your health goals?",
             type: "select",
             options: [
-                "Gain weight",
-                "Lose weight",
                 "Lose weight and gain muscle",
                 "Gain weight and gain muscle",
                 "Maintain and gain muscle",

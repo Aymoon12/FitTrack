@@ -7,7 +7,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.PastOrPresent;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,6 +27,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 public class User implements UserDetails {
+
+
 
 
 
@@ -118,9 +123,9 @@ public class User implements UserDetails {
 		return UserDetails.super.isEnabled();
 	}
 
+
 	private String gitHubID;
 	private String googleID;
-
 
 
 }

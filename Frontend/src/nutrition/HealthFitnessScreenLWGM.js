@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Card, CardContent, Typography, Modal, Box, Link } from "@mui/material";
 import {workoutSplits,workoutDescrip} from "./NutritionUtils.js"
+import {getUser,getToken} from "../utils.js"
 
 const workoutDescriptions = workoutDescrip()
 
 const workoutDetails = workoutSplits()
+
+
 
 const HealthFitnessScreen = () => {
     const [selectedWorkout, setSelectedWorkout] = useState(null);
@@ -12,6 +15,13 @@ const HealthFitnessScreen = () => {
     const handleOpen = (workout) => setSelectedWorkout(workout);
     const handleClose = () => setSelectedWorkout(null);
 
+    const [goal, setGoal ] = useState('')
+
+
+    useEffect(() => {
+        setGoal(getUser().healthGoal)
+        console.log(goal)
+    }, [goal]);
     return (
         <div className="min-h-screen bg-blue-100 flex flex-col items-center justify-center p-6">
             <Card className="w-full max-w-4xl shadow-lg">
@@ -29,13 +39,21 @@ const HealthFitnessScreen = () => {
                             Diet Recommendations
                         </Typography>
                         <Typography variant="body1" className="text-gray-700 mt-2">
-                            To lose weight and gain muscle, focus on a balanced diet rich in
-                            protein, healthy fats, and complex carbohydrates. Include foods
-                            like chicken breast, eggs, quinoa, sweet potatoes, and leafy
-                            greens.
+                            {goal === 'LOSE_WEIGHT_GAIN_MUSCLE'? "To lose weight and gain muscle, focus on a balanced diet rich in \n" +
+                                "protein, healthy fats, and complex carbohydrates. Include foods\n" +
+                                "like chicken breast, eggs, quinoa, sweet potatoes, and leafy greens."
+                            : goal === 'GAIN_WEIGHT_GAIN_MUSCLE' ? "To gain weight and build muscle, focus on a slight calorie surplus with\n" +
+                                    "balanced meals rich in protein, healthy fats, and complex carbohydrates. Include foods like lean meats, salmon,\n" +
+                                    "avocados, nuts, whole grains, and beans. Combine this with consistent strength training to support healthy muscle growth\n" +
+                                    "and steady weight gain."
+                            :"To maintain your current weight while gaining muscle, focus on balancing your calorie intake with regular " +
+                                        "strength training. Choose a protein-rich diet—lean meats, fish, eggs, and legumes—along with complex carbohydrates (brown rice, oats) " +
+                                        "and healthy fats (avocados, nuts). " +
+                                        "This ensures you’re getting enough nutrients for muscle growth without significantly increasing overall body weight."}
+
                         </Typography>
                         <ul className="list-disc list-inside mt-4 text-gray-700">
-                            <li>Consume 1.2-2.0 grams of protein per kg of body weight.</li>
+                            <li>Consume 0.75 - 1 grams of protein per lb of body weight.</li>
                             <li>Avoid processed and sugary foods.</li>
                             <li>Drink plenty of water and stay hydrated.</li>
                         </ul>

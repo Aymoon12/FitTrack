@@ -4,7 +4,9 @@ import com.fitnessapp.FitnessApp.Authentication.TwoFactor.VerificationType;
 import com.fitnessapp.FitnessApp.Authentication.config.JwtService;
 import com.fitnessapp.FitnessApp.dto.UserDTO;
 import com.fitnessapp.FitnessApp.model.*;
+import com.fitnessapp.FitnessApp.repository.CardiovascularActivityRepository;
 import com.fitnessapp.FitnessApp.repository.UserRepository;
+import com.fitnessapp.FitnessApp.repository.WorkoutRepository;
 import com.fitnessapp.FitnessApp.requests.SurveyResults;
 import com.fitnessapp.FitnessApp.requests.UpdateInfoRequest;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,9 +17,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.fitnessapp.FitnessApp.model.AchievementsResponse;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -27,6 +30,8 @@ public class UserService {
 	private final JwtService jwtService;
 	private final UserDetailsService userDetailsService;
 	private final PasswordEncoder passwordEncoder;
+	private final WorkoutRepository workoutRepository;
+	private final CardiovascularActivityRepository cardiovascularActivityRepository;
 
 	public UserDTO getUser(HttpServletRequest http) {
 
@@ -159,6 +164,7 @@ public class UserService {
 		if(user.getLastSignIn() == null){
 			user.setLastSignIn(LocalDate.now());
 		}
+
 		if(user.getStreak() == null){
 			user.setStreak(1L);
 		}
@@ -211,5 +217,30 @@ public class UserService {
 				.mostSteps(user.getMostSteps())
 				.longestStreak(user.getLongestStreak())
 				.build();
+	}
+
+	public List<Long> getWorkoutTimeAndHealthMetrics(Long userId) {
+
+		User user = userRepository.findUserById(userId)
+				.orElseThrow(() -> new RuntimeException("User not found"));
+
+		Long totalWorkouts = workoutRepository.findTotalByDateAndUserId(LocalDate.now(), userId).orElse(0L);
+
+		Long workoutTime = totalWorkouts * 15;
+
+		List<Long> res = new ArrayList<>();
+		res.add(workoutTime);
+
+		Long userStepGoal = user.getUserGoals().getGoalSteps();
+		System.out.println(userStepGoal);
+		Long todaysSteps = cardiovascularActivityRepository.getTodaysSteps(userId, LocalDate.now()).orElse(0L);
+		System.out.println(todaysSteps);
+
+		Long stepMetric = (long) (((double) todaysSteps / (double) userStepGoal) * 100);
+		System.out.println("Step metric " + stepMetric);
+		res.add(stepMetric);
+		return res;
+
+
 	}
 }

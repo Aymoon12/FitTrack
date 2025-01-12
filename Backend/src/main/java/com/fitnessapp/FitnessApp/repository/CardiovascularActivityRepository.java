@@ -20,4 +20,7 @@ public interface CardiovascularActivityRepository extends JpaRepository<Cardiova
             "WHERE ca.user_id=?1 AND ca.date_added " +
             "BETWEEN ?2 AND ?3")
     Optional<List<DailyStepsDTO>> getWeeklyStepsByUserID(Long user_id, LocalDate start, LocalDate end);
+
+    @Query("SELECT ca.dailySteps FROM CardiovascularActivity ca WHERE ca.user_id =?1 AND ca.date_added =?2")
+    Optional<Long> getTodaysSteps(Long user_id, LocalDate date);
 }

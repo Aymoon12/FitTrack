@@ -1,8 +1,9 @@
 package com.fitnessapp.FitnessApp.controller;
 
 import com.fitnessapp.FitnessApp.dto.UserDTO;
+import com.fitnessapp.FitnessApp.dto.UserGoalsAndMetricsDTO;
+import com.fitnessapp.FitnessApp.model.AchievementsResponse;
 import com.fitnessapp.FitnessApp.model.Response;
-import com.fitnessapp.FitnessApp.model.UserGoals;
 import com.fitnessapp.FitnessApp.requests.SurveyResults;
 import com.fitnessapp.FitnessApp.requests.UpdateInfoRequest;
 import com.fitnessapp.FitnessApp.requests.UserGoalsRequest;
@@ -12,7 +13,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.fitnessapp.FitnessApp.model.AchievementsResponse;
 
 
 @RestController
@@ -50,7 +50,7 @@ public class UserController {
 	}
 
 	@GetMapping("/getUserGoals")
-	public ResponseEntity<UserGoals> getUserGoals(@RequestParam Long user_id){
+	public ResponseEntity<UserGoalsAndMetricsDTO> getUserGoals(@RequestParam Long user_id){
 		return ResponseEntity.ok(userGoalsService.getUserGoals(user_id));
 	}
 

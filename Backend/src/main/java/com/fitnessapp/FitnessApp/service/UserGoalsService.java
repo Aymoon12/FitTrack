@@ -1,5 +1,6 @@
 package com.fitnessapp.FitnessApp.service;
 
+import com.fitnessapp.FitnessApp.dto.UserGoalsAndMetricsDTO;
 import com.fitnessapp.FitnessApp.model.User;
 import com.fitnessapp.FitnessApp.model.UserGoals;
 import com.fitnessapp.FitnessApp.repository.UserGoalsRepository;
@@ -8,12 +9,15 @@ import com.fitnessapp.FitnessApp.requests.UserGoalsRequest;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Data
 public class UserGoalsService {
 
 	private final UserGoalsRepository userGoalsRepository;
 	private final UserRepository userRepository;
+	private final UserService userService;
 
 	public UserGoals baseGoals(Long user_id){
 		UserGoals usergoals =  UserGoals.builder()
@@ -83,11 +87,17 @@ public class UserGoalsService {
 		return "Sucessfully Updated";
 	}
 
-	public UserGoals getUserGoals(Long userId) {
+	public UserGoalsAndMetricsDTO getUserGoals(Long userId) {
 
 		User user = userRepository.findUserById(userId).orElseThrow(
 				()-> new RuntimeException("User not found")
 		);
-		return user.getUserGoals();
+
+		List<Long> metrics = userService.getWorkoutTimeAndHealthMetrics(userId);
+
+		return UserGoalsAndMetricsDTO.builder()
+				.userGoals(user.getUserGoals())
+				.metrics(metrics)
+				.build();
 	}
 }

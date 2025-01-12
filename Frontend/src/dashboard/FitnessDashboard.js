@@ -76,6 +76,9 @@ const FitnessDashboard = () => {
     const [mostSteps, setMostSteps] = useState(0)
     const [longestStreak, setLongestStreak] = useState(0)
 
+    const [workoutTime, setWorkoutTime] = useState(0)
+    const [metrics, setMetrics] = useState(0)
+
 
 
 
@@ -187,10 +190,17 @@ const FitnessDashboard = () => {
               setCalorieGoal(2000)
             }
           else{
-              setCalorieGoal(response.data.goalCalories)
-              setFatGoal(response.data.goalFats)
-              setProteinGoal(response.data.goalProtein)
-              setCarbGoal(response.data.goalCarbohydrates)
+              let ug = response.data.userGoals;
+              setCalorieGoal(ug.goalCalories)
+              setFatGoal(ug.goalFats)
+              setProteinGoal(ug.goalProtein)
+              setCarbGoal(ug.goalCarbohydrates)
+
+              let metrics = response.data.metrics;
+
+              setWorkoutTime(metrics[0])
+              setMetrics(metrics[1])
+
           }
 
           const getMostSteps = await axios.get("http://localhost:8080/api/v1/user/getMostSteps",{
@@ -370,7 +380,7 @@ const FitnessDashboard = () => {
                                 <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <CardContent>
                                         <Typography variant="h6" className="text-blue-600">Workouts</Typography>
-                                        <Typography variant="h4">45 mins</Typography> {/* Example data */}
+                                        <Typography variant="h4">{workoutTime} mins</Typography> {/* Example data */}
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -378,7 +388,7 @@ const FitnessDashboard = () => {
                                 <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <CardContent>
                                         <Typography variant="h6" className="text-blue-600">Health Metrics</Typography>
-                                        <Typography variant="h4">70%</Typography> {/* Example data */}
+                                        <Typography variant="h4">{metrics}%</Typography> {/* Example data */}
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -629,7 +639,7 @@ const FitnessDashboard = () => {
 
                                         {/* Content */}
                                         <Typography variant="body2" color="text.secondary">
-                                            - Longest Streak: {longestStreak} days
+                                            - Longest Streak: {longestStreak} {longestStreak === 1 ? 'day' : 'days'}
                                             <br />
                                             - Most Steps in a Day: {mostSteps} steps
                                         </Typography>
@@ -748,7 +758,7 @@ const FitnessDashboard = () => {
                             "Push harder than yesterday if you want a different tomorrow."
                         </Typography>
                         <Typography variant="body2" align="center" color="text.secondary">
-                            Streak: {streak} days
+                            Streak: {streak} {streak === 1 ? 'day' : 'days'}
                         </Typography>
                     </Box>
 

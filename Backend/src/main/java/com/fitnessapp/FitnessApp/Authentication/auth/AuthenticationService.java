@@ -18,6 +18,7 @@ import com.fitnessapp.FitnessApp.service.UserService;
 import com.fitnessapp.FitnessApp.utils.OTPUtils;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,6 +27,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+@Log4j2
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
@@ -105,6 +107,7 @@ public class AuthenticationService {
 			);
 		}
 		catch (Exception e) {
+			log.error("e: ", e);
 			return AuthenticationResponse.builder()
 					.message("Incorrect username or password!")
 					.build();
