@@ -19,7 +19,7 @@ FitTrack is a web application designed to help users track their fitness goals, 
   
 ## Access
 
-- To access this project, click: [FitTrack](fitttrack.com/)
+- To access this project, click: [FitTrack](http://fitttrack.com/)
   
   
 ## Usage
