@@ -55,7 +55,7 @@ export default function SignInSide() {
         }
 
         try{
-            const response = await axios.post('http://localhost:8080/api/v1/auth/authenticate', loginRequest, {
+            const response = await axios.post('http://18.220.193.103:8080/api/v1/auth/authenticate', loginRequest, {
                 headers: {
                     'Content-Type': 'application/json',
                 }

@@ -70,7 +70,7 @@ const SignUp = () => {
 
         try{
             console.log(formData)
-            const response = await axios.post('http://localhost:8080/api/v1/auth/register', signUpRequest, {
+            const response = await axios.post('http://18.220.193.103:8080/api/v1/auth/register', signUpRequest, {
                 headers: {
                     'Content-Type': 'application/json',
                 }

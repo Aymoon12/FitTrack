@@ -13,7 +13,7 @@ export const fetchWorkouts = createAsyncThunk(
         console.log(muscleGroup)
         console.log(user)
         const token = getToken()
-        const response = await axios.get('http://localhost:8080/api/v1/s3/getWorkout', {
+        const response = await axios.get('http://18.220.193.103:8080/api/v1/s3/getWorkout', {
             params: {
                 muscleGroup: muscleGroup,
             },

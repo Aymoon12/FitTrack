@@ -134,6 +134,12 @@
 			<version>8.0.33</version> <!-- Replace with the version compatible with your database -->
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
 
 
 

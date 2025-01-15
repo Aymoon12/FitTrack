@@ -29,9 +29,6 @@ import java.util.List;
 public class User implements UserDetails {
 
 
-
-
-
 	@Id
 	@Column(unique = true,
 			nullable = false)
@@ -62,18 +59,18 @@ public class User implements UserDetails {
 	@Embedded
 	private TwoFactorAuth twoFactorAuth;
 
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id")
 	private List<Food> allFoods;
 
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id")
 	private List<Workout> allWorkouts;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private UserGoals userGoals;
 
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name= "user_id")
 	private List<CardiovascularActivity> cardiovascularActivity;
 

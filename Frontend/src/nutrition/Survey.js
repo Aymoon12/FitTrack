@@ -30,7 +30,7 @@ const Survey = () => {
 
     const sendResults = async () => {
         try {
-            const response = await axios.post('http://localhost:8080/api/v1/user/getSurveyResults', responses, {
+            const response = await axios.post('http://18.220.193.103:8080/api/v1/user/getSurveyResults', responses, {
                 params: {
                     user_id: user.id
                 },

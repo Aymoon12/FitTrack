@@ -91,7 +91,7 @@ const WorkoutRecommendation = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8080/api/v1/workout/addWorkout', workoutRequest, {
+            const response = await axios.post('http://18.220.193.103:8080/api/v1/workout/addWorkout', workoutRequest, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
