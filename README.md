@@ -21,8 +21,8 @@ FitTrack is a web application designed to help users track their fitness goals, 
 
 - To access this project, click: [FitTrack](http://fitttrack.com/)
 - Feel free to create an account or use the following sample login:
-          - username: test
-          - password: password
+- username: test
+- password: password
   
   
 ## Usage
