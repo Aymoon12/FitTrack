@@ -26,7 +26,7 @@ const WorkoutLogger = () => {
 
     const fetchWorkouts = useCallback(async () => {
         try {
-            const response   = await axios.get("http://18.220.193.103:8080/api/v1/workout/getAllWorkoutsByDate", {
+            const response   = await axios.get("https://api.fitttrack.com/api/v1/workout/getAllWorkoutsByDate", {
                 params: {
                     user_id: user.id,
                     date: date,
@@ -62,7 +62,7 @@ const WorkoutLogger = () => {
         };
 
         try {
-            const response = await axios.post('http://18.220.193.103:8080/api/v1/workout/addWorkout', workoutRequest, {
+            const response = await axios.post('https://api.fitttrack.com/api/v1/workout/addWorkout', workoutRequest, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ const WorkoutLogger = () => {
 
         try{
 
-            const response  = await axios.delete('http://18.220.193.103:8080/api/v1/workout/deleteWorkout', {
+            const response  = await axios.delete('https://api.fitttrack.com/api/v1/workout/deleteWorkout', {
                 params: {
                     workout_id: id,
                 },

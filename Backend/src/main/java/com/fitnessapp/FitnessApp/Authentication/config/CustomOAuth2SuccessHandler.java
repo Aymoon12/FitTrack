@@ -48,7 +48,7 @@ public class CustomOAuth2SuccessHandler implements AuthenticationSuccessHandler 
 	}
 
 	private void redirectToSignUp(HttpServletResponse response, String registrationId, String userId) throws IOException {
-		String redirectURL = UriComponentsBuilder.fromUriString("http://fittrack-frontend.s3-website.us-east-2.amazonaws.com/signUp")
+		String redirectURL = UriComponentsBuilder.fromUriString("https://fitttrack.com/signUp")
 				.queryParam(registrationId + "ID", userId)
 				.build()
 				.toUriString();
@@ -58,7 +58,7 @@ public class CustomOAuth2SuccessHandler implements AuthenticationSuccessHandler 
 	private void redirectToDashboard(HttpServletResponse response, User user) throws IOException {
 		String jwtToken = jwtService.generateToken(user);
 		Long streak = userService.updateAndGetStreak(user);
-		String redirectUrl = UriComponentsBuilder.fromUriString("http://fittrack-frontend.s3-website.us-east-2.amazonaws.com/dashboard")
+		String redirectUrl = UriComponentsBuilder.fromUriString("https://fitttrack.com/dashboard")
 				.queryParam("userId", user.getID())
 				.queryParam("token", jwtToken)
 				.build()
