@@ -128,7 +128,7 @@ const FitnessDashboard = () => {
 
         try{
 
-            const response = await axios.get("https://api.fitttrack.com/api/v1/cardio/getWeekSteps" ,{
+            const response = await axios.get("http://18.220.193.103:8080/api/v1/cardio/getWeekSteps" ,{
                 params:{
                     user_id: user_id
                 },
@@ -177,7 +177,7 @@ const FitnessDashboard = () => {
 
         try{
 
-            const response = await axios.get("https://api.fitttrack.com/api/v1/user/getUserGoals" ,{
+            const response = await axios.get("http://18.220.193.103:8080/api/v1/user/getUserGoals" ,{
                 params:{
                     user_id: user_id
                 },
@@ -203,7 +203,7 @@ const FitnessDashboard = () => {
 
           }
 
-          const getMostSteps = await axios.get("https://api.fitttrack.com/api/v1/user/getMostSteps",{
+          const getMostSteps = await axios.get("http://18.220.193.103:8080/api/v1/user/getMostSteps",{
               params: {
                   user_id: user_id,
               },
@@ -232,7 +232,7 @@ const FitnessDashboard = () => {
 
 
 
-          const getMacros = await axios.get("https://api.fitttrack.com/api/v1/food/getCalories",{
+          const getMacros = await axios.get("http://18.220.193.103:8080/api/v1/food/getCalories",{
               params:{
                   user_id: user_id,
                   date: date
@@ -250,7 +250,7 @@ const FitnessDashboard = () => {
             if(localStorage.getItem('user') === null){
                 try{
 
-                    const response = await axios.get('https://api.fitttrack.com/api/v1/user/getUser', {
+                    const response = await axios.get('http://18.220.193.103:8080/api/v1/user/getUser', {
                         headers: {
                             'Authorization': `Bearer ${token}`
                         }
@@ -276,7 +276,7 @@ const FitnessDashboard = () => {
             dailySteps: steps
         }
         try{
-            const log = await axios.post('https://api.fitttrack.com/api/v1/cardio/logStep', stepRequest, {
+            const log = await axios.post('http://18.220.193.103:8080/api/v1/cardio/logStep', stepRequest, {
 
                 headers: {
                     'Content-Type': 'application/json',

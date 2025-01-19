@@ -59,7 +59,7 @@ export default function SignInSide() {
         }
 
         try{
-            const response = await axios.post('https://api.fitttrack.com/api/v1/auth/authenticate', loginRequest, {
+            const response = await axios.post('http://18.220.193.103:8080/api/v1/auth/authenticate', loginRequest, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -101,12 +101,12 @@ export default function SignInSide() {
 
     const handleGitHubLogin = () => {
 
-        window.location.href = 'https://api.fitttrack.com/oauth2/authorization/github';
+        window.location.href = 'http://18.220.193.103:8080/oauth2/authorization/github';
     };
 
     const handleGoogleLogin = () => {
 
-        window.location.href = 'https://api.fitttrack.com/oauth2/authorization/google'
+        window.location.href = 'http://18.220.193.103:8080/oauth2/authorization/google'
     }
 
     useEffect(() => {

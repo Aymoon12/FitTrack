@@ -72,7 +72,7 @@ const UserProfile = () => {
         formData.append('file',newProfilePic)
 
         try{
-            const fileUpload = await axios.post('https://api.fitttrack.com/api/v1/s3/upload',formData,{
+            const fileUpload = await axios.post('http://18.220.193.103:8080/api/v1/s3/upload',formData,{
                 params : {
                     user_id: user.id
                 },
@@ -98,7 +98,7 @@ const UserProfile = () => {
     const getProfilePicture  = async () => {
 
         try {
-            const getPicture = await axios.get("https://api.fitttrack.com/api/v1/s3/getProfilePicture", {
+            const getPicture = await axios.get("http://18.220.193.103:8080/api/v1/s3/getProfilePicture", {
                 params: {
                     user_id: user.id
                 }
@@ -169,7 +169,7 @@ const UserProfile = () => {
 
         try {
 
-            const updateInfoResponse = await axios.patch('https://api.fitttrack.com/api/v1/user/updateUserInfo', updateRequest, {
+            const updateInfoResponse = await axios.patch('http://18.220.193.103:8080/api/v1/user/updateUserInfo', updateRequest, {
                 params: {
                     user_id : user.id
                 },
@@ -199,7 +199,7 @@ const UserProfile = () => {
 
         try {
 
-            const changePasswordRequest = await axios.patch('https://api.fitttrack.com/api/v1/user/changePassword', {}, {
+            const changePasswordRequest = await axios.patch('http://18.220.193.103:8080/api/v1/user/changePassword', {}, {
                 params: {
                     user_id: user.id,
                     currentPassword: currentPass,

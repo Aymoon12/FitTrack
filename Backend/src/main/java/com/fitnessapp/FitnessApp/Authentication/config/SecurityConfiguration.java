@@ -35,7 +35,6 @@ public class SecurityConfiguration {
 									.requestMatchers("/admin_only/**").hasAuthority("ADMIN")
 									.requestMatchers("/login/**").permitAll()
 									.requestMatchers("/api/v1/oauth/**").permitAll()
-									.requestMatchers("/health").permitAll()
 									.anyRequest()
 									.authenticated();
 

@@ -41,7 +41,7 @@ const CalorieTracker = () => {
     const fetchLogs = useCallback(async () => {
         setLoading(true); // Start loading
         try {
-            const response = await axios.get('https://api.fitttrack.com/api/v1/food/getAllMeals', {
+            const response = await axios.get('http://18.220.193.103:8080/api/v1/food/getAllMeals', {
                 params: {
                     user_id: userId,
                     date: date,
@@ -72,7 +72,7 @@ const CalorieTracker = () => {
 
     const handleDeleteFood = async (foodId) => {
         try {
-            const response = await axios.delete("https://api.fitttrack.com/api/v1/food/deleteFood", {
+            const response = await axios.delete("http://18.220.193.103:8080/api/v1/food/deleteFood", {
                 params: {
                     food_id: foodId
                 },
@@ -162,7 +162,7 @@ const CalorieTracker = () => {
 
         try {
 
-            const response = await axios.patch('https://api.fitttrack.com/api/v1/food/updateServingSize', {
+            const response = await axios.patch('http://18.220.193.103:8080/api/v1/food/updateServingSize', {
                 food_id: food_id, // Send food_id in the body
                 servingSize: newServingSize // Send servingSize in the body
             }, {
@@ -193,7 +193,7 @@ const CalorieTracker = () => {
         }
 
         try{
-            const response = await axios.post("https://api.fitttrack.com/api/v1/user/updateGoals", editGoalsRequest, {
+            const response = await axios.post("http://18.220.193.103:8080/api/v1/user/updateGoals", editGoalsRequest, {
                 headers:{
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,

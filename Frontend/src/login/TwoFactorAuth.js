@@ -21,7 +21,7 @@ const TwoFactorAuth = () => {
         }
 
         try{
-            const response  = await axios.post('https://api.fitttrack.com/api/v1/auth/verifyOTP',twoFactorRequest,{
+            const response  = await axios.post('http://18.220.193.103:8080/api/v1/auth/verifyOTP',twoFactorRequest,{
                 headers:{
                     'Content-Type': 'application/json',
                 }

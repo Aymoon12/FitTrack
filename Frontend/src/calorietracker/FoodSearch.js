@@ -67,7 +67,7 @@ const FoodSearch = ({ onAddFood }) => {
 
         try{
 
-            const response = await axios.get("https://api.fitttrack.com/api/v1/customFood/getFood", {
+            const response = await axios.get("http://18.220.193.103:8080/api/v1/customFood/getFood", {
                 params: {
                     user_id: user.id,
                     food_name: searchTerm
@@ -163,7 +163,7 @@ const FoodSearch = ({ onAddFood }) => {
         };
 
         try {
-            const response = await axios.post('https://api.fitttrack.com/api/v1/food/addFood', foodRequest, {
+            const response = await axios.post('http://18.220.193.103:8080/api/v1/food/addFood', foodRequest, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
@@ -199,7 +199,7 @@ const FoodSearch = ({ onAddFood }) => {
         };
 
         try {
-            const response = await axios.post('https://api.fitttrack.com/api/v1/food/addFood', foodRequest, {
+            const response = await axios.post('http://18.220.193.103:8080/api/v1/food/addFood', foodRequest, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
@@ -240,7 +240,7 @@ const FoodSearch = ({ onAddFood }) => {
     const handleSubmitNewFood = async() => {
 
        try{
-           const response = await axios.post("https://api.fitttrack.com/api/v1/customFood/createFood", customFoodRequest, {
+           const response = await axios.post("http://18.220.193.103:8080/api/v1/customFood/createFood", customFoodRequest, {
                headers: {
                    'Content-Type': 'application/json',
                    'Authorization': `Bearer ${token}`,

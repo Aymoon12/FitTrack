@@ -13,7 +13,7 @@ export const Toggle2Factor = () => {
 
     const get2FactorStatus = async () => {
         try {
-            const response = await axios.get('https://api.fitttrack.com/api/v1/user/getTwoFactorStatus', {
+            const response = await axios.get('http://18.220.193.103:8080/api/v1/user/getTwoFactorStatus', {
                 params: { user_id: user.id },
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -34,8 +34,8 @@ export const Toggle2Factor = () => {
 
         try {
             const endpoint = newIsChecked
-                ? 'https://api.fitttrack.com/api/v1/user/enable-two-factor'
-                : 'https://api.fitttrack.com/api/v1/user/disable-two-factor';
+                ? 'http://18.220.193.103:8080/api/v1/user/enable-two-factor'
+                : 'http://18.220.193.103:8080/api/v1/user/disable-two-factor';
 
             await axios.patch(endpoint, {}, {
                 params:{
